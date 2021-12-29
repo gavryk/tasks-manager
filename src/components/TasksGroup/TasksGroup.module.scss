@@ -3,18 +3,20 @@
   overflow-y: scroll;
   padding-left: 0;
   li {
-    padding: 15px 30px 15px 45px;
+    padding: 15px 25px 15px 15px;
     position: relative;
     font-size: 20px;
     cursor: pointer;
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
     color: #505050;
-    display: flex;
+    display: grid;
+    grid-template-columns: 12px auto 20px;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row;
+    grid-gap: 15px;
+    .title {
+        line-height: 1;
+    }
     .remove {
       opacity: 0;
       transition: all 0.3s ease-in-out;
@@ -30,14 +32,9 @@
         opacity: 1;
       }
     }
-    &:after {
-      content: "";
-      position: absolute;
-      left: 10px;
-      top: 25px;
-      height: 12px;
-      width: 12px;
-      background-color: green;
+    .bullet {
+      height: 15px;
+      width: 15px;
       border-radius: 50%;
     }
   }
