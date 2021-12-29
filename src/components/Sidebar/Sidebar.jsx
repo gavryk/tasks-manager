@@ -12,6 +12,7 @@ const Sidebar = ({ sidebarAct }) => {
         <div className={style.allBtn}>
           <h5>
             <FontAwesomeIcon size="xs" icon={faListUl} /> All Tasks
+            
           </h5>
         </div>
         <TasksGroup/>
