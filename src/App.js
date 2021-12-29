@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import { Header, Sidebar } from "./components";
 
-function App() {
+const App = () => {
+  const [sidebarActive, setSidebarActive] = useState(true);
+
+  const handleSidebar = () => {
+    setSidebarActive(!sidebarActive);
+  }
+
   return (
-    <div className="App">
-      <h1>Hello</h1>
+    <div className="todo-wrapper">
+      <Sidebar sidebarAct={sidebarActive} />
+      <div className="main">
+        <Header handleSidebar={handleSidebar} sidebarAct={sidebarActive} />
+      </div>
     </div>
   );
 }

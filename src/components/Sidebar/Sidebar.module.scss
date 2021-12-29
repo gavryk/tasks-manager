@@ -1,0 +1,32 @@
+.sidebar {
+  background-color: #e5e5e5;
+  flex-basis: 20%;
+  max-width: 20%;
+  height: 100%;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+  margin-left: -20%;
+  padding: 60px 30px;
+  box-shadow: 1px 0 10px 0 rgba(#b1afaf, .7);
+  &.active {
+    margin-left: 0;
+  }
+  .allBtn {
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(150, 150, 150, 0.63);
+    h5 {
+      display: grid;
+      grid-template-columns: 15px auto;
+      grid-gap: 15px;
+      align-items: center;
+      padding: 12px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+      color: #5a5a5a;
+      &:hover, &.active {
+        background-color: #fff;
+      }
+    }
+  }
+}
