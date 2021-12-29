@@ -9,7 +9,7 @@ const TasksGroup = ({ todos }) => {
     <ul className={style.tasksGroup}>
       {todos.map((el, index) => (
         <li key={`${el}_${index}`}>
-          <span className={style.bullet} style={{backgroundColor: el.color}} ></span>
+          <span className={`${style.bullet}`} style={{backgroundColor: el.color ? el.color : '#0a93ee'}} ></span>
           <span className={style.title}>{el.title}</span>
           <button className={style.remove}>
             <FontAwesomeIcon icon={faTimes} color="#50505063" />

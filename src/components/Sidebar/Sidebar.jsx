@@ -8,10 +8,10 @@ import style from './Sidebar.module.scss';
 const Sidebar = ({ sidebarAct }) => {
 
   const todos = [
-    { title: "Create", color: "#42B883" },
-    { title: "Read", color: "#e29c1a" },
-    { title: "Update", color: "#2238b4" },
-    { title: "Delete", color: "#f30909" }
+    { title: "Create", color: "#48e9a0" },
+    { title: "Read", color: "#f3b94c" },
+    { title: "Update", color: "#da46df" },
+    { title: "Delete", color: "#f54545" }
   ];
 
     return (
