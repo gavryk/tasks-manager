@@ -1,9 +1,6 @@
 const initState = {
   groups: [
-    { id: 1, title: "Create", color: "#48e9a0", active: false },
-    { id: 2, title: "Read", color: "#f3b94c", active: false },
-    { id: 3, title: "Update", color: "#da46df", active: false },
-    { id: 4, title: "Delete", color: "#f54545", active: false },
+    { id: 1, title: "Create", color: "#48e9a0", active: false }
   ],
 };
 

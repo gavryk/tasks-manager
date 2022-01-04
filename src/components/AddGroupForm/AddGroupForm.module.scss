@@ -1,0 +1,13 @@
+.colorField {
+  display: grid;
+  grid-template-columns: 75px 20px;
+  grid-gap: 15px;
+  align-items: center;
+  input {
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+  }
+}

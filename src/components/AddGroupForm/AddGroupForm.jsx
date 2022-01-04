@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { reduxForm } from "redux-form";
 
+import style from './AddGroupForm.module.scss';
+
 const AddGroupForm = ({addGroup}) => {
     const [inputNameValue, setInputNameValue] = useState("");
     const [inputColorValue, setInputColorValue] = useState("#000000");
@@ -15,28 +17,26 @@ const AddGroupForm = ({addGroup}) => {
     const handleGroup = () => {
         if (inputNameValue !== '') {
           addGroup(inputNameValue, inputColorValue);
+          setInputNameValue("");
+          setInputColorValue("#000000");
         }
-        setInputNameValue("");
-        setInputColorValue("#000000");
     };
 
     return (
-      <div>
-        <GroupForm
-          onSubmit={handleGroup}
-          inputNameValue={inputNameValue}
-          inputColorValue={inputColorValue}
-          setName={setName}
-          setColor={setColor}
-        />
-      </div>
+      <GroupForm
+        onSubmit={handleGroup}
+        inputNameValue={inputNameValue}
+        inputColorValue={inputColorValue}
+        setName={setName}
+        setColor={setColor}
+      />
     );
 }
 
 const Form = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
-      <label>
+      <div>
         <input
           className="form-control form-control-l"
           type="text"
@@ -44,14 +44,15 @@ const Form = (props) => {
           value={props.inputNameValue}
           onChange={props.setName}
         />
-      </label>
-      <label>
+      </div>
+      <div className={style.colorField}>
+        <span>Pin Color:</span>
         <input
           type="color"
           value={props.inputColorValue}
           onChange={props.setColor}
         />
-      </label>
+      </div>
       <button type="submit">Add Group</button>
     </form>
   );

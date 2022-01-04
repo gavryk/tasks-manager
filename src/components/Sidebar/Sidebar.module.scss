@@ -14,7 +14,7 @@
   }
   .allBtn {
     margin-bottom: 15px;
-    border-bottom: 1px solid rgba(150, 150, 150, .2);
+    border-bottom: 1px solid rgba(150, 150, 150, 0.2);
     h5 {
       display: grid;
       grid-template-columns: 15px auto;
@@ -35,7 +35,7 @@
   .addGroupPopup {
     visibility: hidden;
     opacity: 0;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
@@ -52,7 +52,7 @@
       width: 25px;
       height: 25px;
       border-radius: 50%;
-      background-color: #5C5C5C;
+      background-color: #5c5c5c;
       outline: none;
       border: none;
       display: flex;
@@ -73,9 +73,19 @@
       justify-content: center;
       flex-wrap: wrap;
       flex-direction: row;
-      input {
+      div {
         flex-basis: 100%;
         max-width: 100%;
+        margin-bottom: 15px;
+      }
+      button {
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: #4DD599;
+        color: #fff;
+        padding: 10px;
+        border-radius: 10px;
       }
     }
   }

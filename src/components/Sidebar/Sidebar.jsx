@@ -14,7 +14,7 @@ const Sidebar = ({ sidebarAct, items, addGroup }) => {
 
     const handleGroup = (name, color) => {
       const task = {
-        id: Math.random().toString(36).substr(2, 9),
+        id: Math.random().toString(36).substr(2, 15),
         title: name,
         color: color,
         active: false,
