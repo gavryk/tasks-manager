@@ -66,5 +66,17 @@
         }
       }
     }
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex-direction: row;
+      input {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+    }
   }
 }
