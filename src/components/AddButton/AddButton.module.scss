@@ -1,0 +1,36 @@
+.addButton {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: grid;
+  grid-template-columns: 15px auto;
+  grid-gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 12px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: #5a5a5a70;
+  font-size: 20px;
+  font-weight: 500;
+  span, svg {
+    opacity: .6;
+    transition: all .3s ease-in-out;
+  }
+  span {
+    color: #5a5a5a;
+  }
+  svg {
+    path {
+      fill: #5a5a5a;
+    }
+  }
+  &:hover,
+  &.active {
+    span, svg {
+      opacity: 1;
+    }
+  }
+}

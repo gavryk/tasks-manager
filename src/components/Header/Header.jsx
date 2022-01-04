@@ -3,8 +3,11 @@ import style from "./Header.module.scss";
 
 const Header = ({ handleSidebar, sidebarAct }) => {
   return (
-    <div className={`${style.headerWrapper}`} onClick={handleSidebar}>
-      <div className={`${style.burger} ${sidebarAct ? style.active : ""}`}>
+    <div className={`${style.headerWrapper}`}>
+      <div
+        className={`${style.burger} ${sidebarAct ? style.active : ""}`}
+        onClick={handleSidebar}
+      >
         <span></span>
       </div>
     </div>

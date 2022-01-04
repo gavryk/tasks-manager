@@ -7,8 +7,8 @@ import style from "./TasksGroup.module.scss";
 const TasksGroup = ({ todos }) => {
   return (
     <ul className={style.tasksGroup}>
-      {todos.map((el, index) => (
-        <li key={`${el}_${index}`}>
+      {todos.map((el) => (
+        <li key={`${el.id}`} className={`${ el.active ? style.active : '' }`}>
           <span className={`${style.bullet}`} style={{backgroundColor: el.color ? el.color : '#0a93ee'}} ></span>
           <span className={style.title}>{el.title}</span>
           <button className={style.remove}>
