@@ -32,6 +32,13 @@
     }
   }
 
+  .tasksGroup {
+    height: auto;
+    padding-left: 0;
+    border-bottom: 1px solid rgba(150, 150, 150, 0.2);
+    padding-bottom: 20px;
+  }
+
   .addGroupPopup {
     visibility: hidden;
     opacity: 0;
@@ -82,10 +89,14 @@
         width: 100%;
         border: none;
         outline: none;
-        background-color: #4DD599;
+        background-color: #4dd599;
         color: #fff;
         padding: 10px;
         border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background: darken(#4dd599, 10%);
+        }
       }
     }
   }

@@ -1,7 +1,5 @@
 const initState = {
-  groups: [
-    { id: 1, title: "Create", color: "#48e9a0", active: false }
-  ],
+  groups: [],
 };
 
 const tasksGroup = (state = initState, action) => {
@@ -15,6 +13,11 @@ const tasksGroup = (state = initState, action) => {
       return {
         ...state,
         groups: [...state.groups, action.payload],
+      };
+    case "REMOVE_GROUP":
+      return {
+        ...state,
+        groups: [...state.groups.filter(group => group.id !== action.payload)]
       };
     default:
       return state;

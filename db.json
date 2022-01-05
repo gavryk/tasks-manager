@@ -1,0 +1,22 @@
+{
+  "tasksGroups": [
+    {
+      "id": "kycbhdpyi8",
+      "title": "Test",
+      "color": "#eeff00",
+      "active": false
+    },
+    {
+      "id": "fj2hewxu1cq",
+      "title": "Test2",
+      "color": "#91d204",
+      "active": false
+    },
+    {
+      "id": "irmgodr2kuc",
+      "title": "ololo",
+      "color": "#ffb10a",
+      "active": false
+    }
+  ]
+}

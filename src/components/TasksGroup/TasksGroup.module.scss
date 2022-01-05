@@ -1,9 +1,4 @@
-.tasksGroup {
-  height: auto;
-  padding-left: 0;
-  border-bottom: 1px solid rgba(150, 150, 150, 0.2);
-  padding-bottom: 20px;
-  li {
+.groupEl {
     padding: 15px 25px 15px 15px;
     position: relative;
     font-size: 20px;
@@ -15,6 +10,10 @@
     grid-template-columns: 12px auto 20px;
     align-items: center;
     grid-gap: 15px;
+    &.beforeDel {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
     &:hover,
     &.active {
       background-color: #fff;
@@ -39,4 +38,3 @@
       border-radius: 50%;
     }
   }
-}
