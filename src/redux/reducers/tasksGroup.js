@@ -1,5 +1,6 @@
 const initState = {
   groups: [],
+  selectedGroup: null
 };
 
 const tasksGroup = (state = initState, action) => {
@@ -19,6 +20,11 @@ const tasksGroup = (state = initState, action) => {
         ...state,
         groups: [...state.groups.filter(group => group.id !== action.payload)]
       };
+    case "SELECT_GROUP":
+      return {
+        ...state,
+        selectedGroup: action.payload
+      }  
     default:
       return state;
   }
