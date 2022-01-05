@@ -17,9 +17,7 @@ const TasksGroup = ({ group, removeGroup }) => {
   return (
     <li
       key={`${group.id}`}
-      className={`${style.groupEl} ${group.active ? style.active : ""} ${
-        beforeDel && style.beforeDel
-      }`}
+      className={`${style.groupEl} ${group.active ? style.active : ""} ${beforeDel && style.beforeDel}`}
     >
       <span
         className={`${style.bullet}`}

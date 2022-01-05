@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faListUl, faTimes } from "@fortawesome/free-solid-svg-icons"; 
+import { faListUl } from "@fortawesome/free-solid-svg-icons"; 
 import { AddButton, AddGroupForm, TasksGroup } from "..";
 
 import style from './Sidebar.module.scss';
@@ -34,22 +34,20 @@ const Sidebar = ({ sidebarAct, items, addGroup, removeGroup }) => {
       {items.length !== 0 && (
         <ul className={style.tasksGroup}>
           {items.map((group) => (
-            <TasksGroup group={group} removeGroup={removeGroup} />
+            <TasksGroup
+              key={group.id}
+              group={group}
+              removeGroup={removeGroup}
+            />
           ))}
         </ul>
       )}
       <AddButton toggle={toggleAddPopup} title="Add Group" />
-      <div
-        className={`${style.addGroupPopup} ${
-          visibleAddPopup ? style.active : ""
-        }`}
-      >
-        <button className={style.close} onClick={toggleAddPopup}>
-          <FontAwesomeIcon icon={faTimes} color="#50505063" />
-        </button>
-
-        <AddGroupForm addGroup={handleGroup} />
-      </div>
+      <AddGroupForm
+        visible={visibleAddPopup}
+        addGroup={handleGroup}
+        toggleAddPopup={toggleAddPopup}
+      />
     </div>
   );
 };

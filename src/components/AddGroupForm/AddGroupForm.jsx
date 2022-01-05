@@ -1,28 +1,38 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { reduxForm } from "redux-form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons"; 
 
 import style from './AddGroupForm.module.scss';
 
-const AddGroupForm = ({addGroup}) => {
-    const [inputNameValue, setInputNameValue] = useState("");
-    const [inputColorValue, setInputColorValue] = useState("#000000");
+const AddGroupForm = ({ addGroup, visible, toggleAddPopup, setVisibleAddPopup }) => {
+  const [inputNameValue, setInputNameValue] = useState("");
+  const [inputColorValue, setInputColorValue] = useState("#000000");
+  const popupRef = useRef();
 
-    const setName = (e) => {
-        setInputNameValue(e.currentTarget.value);
+  const setName = (e) => {
+    setInputNameValue(e.currentTarget.value);
+  };
+  const setColor = (e) => {
+    setInputColorValue(e.currentTarget.value);
+  };
+
+  const handleGroup = () => {
+    if (inputNameValue !== "") {
+      addGroup(inputNameValue, inputColorValue);
+      setInputNameValue("");
+      setInputColorValue("#000000");
     }
-    const setColor = (e) => {
-        setInputColorValue(e.currentTarget.value);
-    };
+  };
 
-    const handleGroup = () => {
-        if (inputNameValue !== '') {
-          addGroup(inputNameValue, inputColorValue);
-          setInputNameValue("");
-          setInputColorValue("#000000");
-        }
-    };
-
-    return (
+  return (
+    <div
+      ref={popupRef}
+      className={`${style.addGroupPopup} ${visible ? style.active : ""}`}
+    >
+      <button className={style.close} onClick={toggleAddPopup}>
+        <FontAwesomeIcon icon={faTimes} color="#50505063" />
+      </button>
       <GroupForm
         onSubmit={handleGroup}
         inputNameValue={inputNameValue}
@@ -30,8 +40,9 @@ const AddGroupForm = ({addGroup}) => {
         setName={setName}
         setColor={setColor}
       />
-    );
-}
+    </div>
+  );
+};
 
 const Form = (props) => {
   return (
