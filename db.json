@@ -1,27 +1,21 @@
 {
   "tasksGroups": [
     {
-      "id": "kiefgoks0zn",
-      "title": "ololo",
+      "id": "be7wl8kcdf",
+      "title": "React",
+      "color": "#0cc8ed",
+      "active": false
+    },
+    {
+      "id": "d6o20c7egxn",
+      "title": "Olegsdsd",
       "color": "#000000",
       "active": false
     },
     {
-      "id": "9ucwsjgjul5",
-      "title": "23232",
-      "color": "#f75555",
-      "active": false
-    },
-    {
-      "id": "nalta41me4n",
-      "title": "oooo",
-      "color": "#367078",
-      "active": false
-    },
-    {
-      "id": "9ea7l8k7d87",
-      "title": "Olki",
-      "color": "#611f1f",
+      "id": "bvqi3akby0s",
+      "title": "1221212",
+      "color": "#000000",
       "active": false
     }
   ]

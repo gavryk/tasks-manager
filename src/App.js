@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Header, Sidebar } from "./components";
+import { Header, Sidebar, Tasks } from "./components";
 import { useSelector } from "react-redux";
-import { deleteTaskGroup, fetchTasksGroups, postTaskGroup } from "./redux/actions/tasksGroup";
+import { fetchTasksGroups } from "./redux/actions/tasksGroup";
+import { Route, Routes } from "react-router-dom";
 
 
 const App = () => {
   const dispatch = useDispatch();
   const [sidebarActive, setSidebarActive] = useState(true);
   const { groups } = useSelector(({ tasksGroup }) => tasksGroup);
+  
 
   const handleSidebar = () => {
     setSidebarActive(!sidebarActive);
@@ -18,24 +20,17 @@ const App = () => {
     dispatch(fetchTasksGroups());
   }, [dispatch]);
 
-  const addGroup = (task) => {
-    dispatch(postTaskGroup(task));
-  }
-
-  const removeGroup = (id) => {
-    dispatch(deleteTaskGroup(id));
-  }
-
   return (
     <div className="todo-wrapper">
       <Sidebar
         sidebarAct={sidebarActive}
         items={groups}
-        addGroup={addGroup}
-        removeGroup={removeGroup}
       />
       <div className="main">
         <Header handleSidebar={handleSidebar} sidebarAct={sidebarActive} />
+        <Routes>
+          <Route path="/list/:id" element={<Tasks />} />
+        </Routes>
       </div>
     </div>
   );

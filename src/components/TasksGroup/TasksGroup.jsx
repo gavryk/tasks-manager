@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from 'react-router-dom';
 
 import style from "./TasksGroup.module.scss";
 
-const TasksGroup = ({ group, removeGroup, selectItem, selectedGroup }) => {
+const TasksGroup = ({ group, removeGroup }) => {
   const [beforeDel, setBeforeDel] = useState(false);
 
   const handleRemoveGroup = (id) => {
@@ -15,12 +16,14 @@ const TasksGroup = ({ group, removeGroup, selectItem, selectedGroup }) => {
   }
 
   return (
-    <li
-      className={`${style.groupEl} ${selectedGroup === group.id && style.active} ${beforeDel && style.beforeDel}`}
-      onClick={() => selectItem(group.id)}
-    >
-      <span className={`${style.bullet}`} style={{ backgroundColor: group.color ? group.color : "#0a93ee" }}></span>
-      <span className={style.title}>{group.title}</span>
+    <li className={`${style.groupEl} ${beforeDel ? style.beforeDel : ""}`}>
+      <NavLink to={`/list/${group.id}`} className={(navData) => navData.isActive ? style.active : ''}>
+        <span
+          className={`${style.bullet}`}
+          style={{ backgroundColor: group.color ? group.color : "#0a93ee" }}
+        ></span>
+        <span className={style.title}>{group.title}</span>
+      </NavLink>
       <button
         className={style.remove}
         onClick={() => handleRemoveGroup(group.id)}

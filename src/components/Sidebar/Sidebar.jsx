@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faListUl } from "@fortawesome/free-solid-svg-icons"; 
 import { AddButton, AddGroupForm, TasksGroup } from "..";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { deleteTaskGroup, postTaskGroup } from '../../redux/actions/tasksGroup';
+import { Link, NavLink } from "react-router-dom";
 
 import style from './Sidebar.module.scss';
-import { selectGroup } from '../../redux/actions/tasksGroup';
 
-const Sidebar = ({ sidebarAct, items, addGroup, removeGroup }) => {
+const Sidebar = ({ sidebarAct, items }) => {
   const [visibleAddPopup, setVisibleAddPopup] = useState(false);
-   const dispatch = useDispatch();
-  const { selectedGroup } = useSelector(({ tasksGroup }) => tasksGroup);
+  const dispatch = useDispatch();
 
   const toggleAddPopup = () => {
     setVisibleAddPopup(!visibleAddPopup);
@@ -28,18 +28,25 @@ const Sidebar = ({ sidebarAct, items, addGroup, removeGroup }) => {
     setVisibleAddPopup(!visibleAddPopup);
   };
 
-  const selectItem = (id) => {
-    dispatch(selectGroup(id));
+  const addGroup = (task) => {
+    dispatch(postTaskGroup(task));
+  };
+
+  const removeGroup = (id) => {
+    dispatch(deleteTaskGroup(id));
   };
 
   return (
     <div className={`${style.sidebar} ${sidebarAct ? style.active : ""}`}>
       {items.length !== 0 && (
-        <div className={style.allBtn} onClick={() => selectItem(null)}>
-          <h5 className={`${ selectedGroup === null && style.active }`}>
+        <NavLink
+          to="/"
+          className={(navData) => navData.isActive ? (`${style.active} ${style.allBtn}`) : style.allBtn}
+        >
+          <h5>
             <FontAwesomeIcon size="xs" icon={faListUl} /> All Tasks
           </h5>
-        </div>
+        </NavLink>
       )}
       {items.length !== 0 && (
         <ul className={style.tasksGroup}>
@@ -48,8 +55,6 @@ const Sidebar = ({ sidebarAct, items, addGroup, removeGroup }) => {
               key={group.id}
               group={group}
               removeGroup={removeGroup}
-              selectItem={selectItem}
-              selectedGroup={selectedGroup}
             />
           ))}
         </ul>

@@ -45,10 +45,3 @@ export const removeTaskGroup = (id) => {
   };
 };
 
-export const selectGroup = (id) => {
-  return {
-    type: "SELECT_GROUP",
-    payload: id,
-  };
-};
-
