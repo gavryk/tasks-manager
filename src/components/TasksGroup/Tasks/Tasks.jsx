@@ -16,11 +16,7 @@ const Tasks = ({activeTasks}) => {
 
   return (
     <div className={style.tasksWrapper}>
-      <div className={style.tasksTitle}>
-        <h2 style={{ color: activeTasks.color }}>{activeTasks.title}</h2>
-      </div>
-
-      {activeTasks.tasks &&
+        {activeTasks.tasks &&
         activeTasks.tasks.map((task, index) => {
           return (
                 <Task 

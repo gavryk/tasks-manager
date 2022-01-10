@@ -4,6 +4,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   flex-direction: row;
+  padding: 30px;
   .burger {
     height: 30px;
     width: 30px;
@@ -50,6 +51,20 @@
             transform-origin: left top;
             width: 10px;
         }
+      }
+    }
+  }
+
+  .tasksTitle {
+    flex: 1;
+    h1 {
+      font-size: 56px;
+      text-align: center;
+      color: #fff;
+    }
+    &.white {
+      h1 {
+        color: #000;
       }
     }
   }

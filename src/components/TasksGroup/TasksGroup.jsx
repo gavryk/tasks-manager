@@ -1,18 +1,21 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import style from "./TasksGroup.module.scss";
 
 const TasksGroup = ({ group, removeGroup }) => {
   const [beforeDel, setBeforeDel] = useState(false);
+  const navigate = useNavigate();
 
   const handleRemoveGroup = (id) => {
     setBeforeDel(true);
     setTimeout(() => {
       removeGroup(id);
+      navigate('/');
     }, 300);
+
   }
 
   return (
