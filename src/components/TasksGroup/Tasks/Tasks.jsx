@@ -1,16 +1,35 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { getActiveTasks } from "../../../redux/actions/tasksGroup";
 
-import style from './Tasks.module.scss';
+import style from "./Tasks.module.scss";
 
 const Tasks = () => {
+    const dispatch = useDispatch();
+    const { activeTasks } = useSelector(({ tasksGroup }) => tasksGroup);
     const { id } = useParams();
+  
+  useEffect(() => {
+    dispatch(getActiveTasks(id));
+  }, [id, dispatch]);
 
-    return (
-        <div>
-            <h1>Tasks { id }</h1>
-        </div>
-    )
-}
+  return (
+    <div>
+      <div className={style.tasksTitle}>
+          <h1 style={{color: activeTasks.color}}>{activeTasks.title}</h1>
+      </div>
 
-export default Tasks
+      {
+        activeTasks.tasks && 
+        activeTasks.tasks.map((task) => {
+            return (
+                <li>{task.title}</li>
+            )
+        }
+      )}
+    </div>
+  );
+};
+
+export default Tasks;

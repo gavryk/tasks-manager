@@ -4,7 +4,24 @@
       "id": "be7wl8kcdf",
       "title": "React",
       "color": "#0cc8ed",
-      "active": false
+      "active": false,
+      "tasks": [
+        {
+          "title": "test"
+        },
+        {
+          "title": "test2"
+        },
+        {
+          "title": "test3"
+        },
+        {
+          "title": "test4"
+        },
+        {
+          "title": "test5"
+        }
+      ]
     },
     {
       "id": "d6o20c7egxn",
@@ -16,6 +33,12 @@
       "id": "bvqi3akby0s",
       "title": "1221212",
       "color": "#000000",
+      "active": false
+    },
+    {
+      "id": "f75bh2pgiy",
+      "title": "Yellow",
+      "color": "#cbfd17",
       "active": false
     }
   ]

@@ -1,6 +1,7 @@
 const initState = {
   groups: [],
-  selectedGroup: null
+  selectedGroup: null,
+  activeTasks: []
 };
 
 const tasksGroup = (state = initState, action) => {
@@ -20,6 +21,11 @@ const tasksGroup = (state = initState, action) => {
         ...state,
         groups: [...state.groups.filter(group => group.id !== action.payload)]
       };
+    case "SET_ACTIVE_TASKS":
+      return {
+        ...state,
+        activeTasks: action.payload
+      };  
     default:
       return state;
   }
