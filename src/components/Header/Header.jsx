@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "./Header.module.scss";
 
-const Header = ({ handleSidebar, sidebarAct }) => {
+const Header = ({ handleSidebar, sidebarAct, activeTasks }) => {
   return (
     <div className={`${style.headerWrapper}`}>
       <div
