@@ -24,16 +24,11 @@
       ]
     },
     {
-      "id": "f75bh2pgiy",
-      "title": "Yellow",
-      "color": "#cbfd17",
-      "active": false
-    },
-    {
-      "id": "heskcgp78j",
-      "title": "Green",
-      "color": "#03fc7b",
-      "active": false
+      "id": "p23a2hptdog",
+      "title": "JS",
+      "color": "#c3e70d",
+      "active": false,
+      "tasks": []
     }
   ]
 }

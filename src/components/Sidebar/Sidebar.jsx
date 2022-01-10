@@ -4,7 +4,7 @@ import { faListUl } from "@fortawesome/free-solid-svg-icons";
 import { AddButton, AddGroupForm, TasksGroup } from "..";
 import { useDispatch } from "react-redux";
 import { deleteTaskGroup, postTaskGroup } from '../../redux/actions/tasksGroup';
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import style from './Sidebar.module.scss';
 
@@ -22,6 +22,7 @@ const Sidebar = ({ sidebarAct, items }) => {
       title: name,
       color: color,
       active: false,
+      tasks: []
     };
 
     addGroup(task);

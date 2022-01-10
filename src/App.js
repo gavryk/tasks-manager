@@ -33,7 +33,7 @@ const App = () => {
           activeTasks={activeTasks}
         />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<Home tasks={groups} />} />
           <Route
             path="/list/:id"
             element={<Tasks activeTasks={activeTasks} />}
