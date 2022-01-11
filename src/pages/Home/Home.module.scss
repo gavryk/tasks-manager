@@ -1,0 +1,22 @@
+.allTasksWrapper {
+  max-width: 85%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 15px;
+  padding: 15px 10px;
+  height: calc(100% - 150px);
+  overflow-x: scroll;
+  .taskGroup {
+    .groupTitle {
+      margin-bottom: 35px;
+      font-size: 38px;
+      font-size: 700;
+    }
+    .tasksList {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 20px;
+    }
+  }
+}

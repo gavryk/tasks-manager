@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import Task from '../../components/TasksGroup/Tasks/Task/Task';
 import { setActiveTasks } from '../../redux/actions/tasksGroup';
+
+import style from './Home.module.scss';
 
 const Home = ({tasks}) => {
     const dispatch = useDispatch();
@@ -10,23 +13,23 @@ const Home = ({tasks}) => {
     }, [dispatch])
 
     return (
-      <div>
+      <div className={style.allTasksWrapper}>
         {tasks &&
           tasks.map(
             (group) =>
               group.tasks.length > 0 && (
-                <>
-                  <h3>{group.title}</h3>
-                  <ul>
+                <div key={group.id} className={ style.taskGroup }>
+                  <h3 className={ style.groupTitle } style={{color: group.color}}>{group.title}</h3>
+                  <div className={ style.tasksList }>
                       {
                           group.tasks.map((t) => {
                               return (
-                                  <li>{t.title}</li>
+                                  <Task key={t.id} {...t} />
                               )
                           })
                       }
-                  </ul>
-                </>
+                  </div>
+                </div>
               )
           )}
       </div>

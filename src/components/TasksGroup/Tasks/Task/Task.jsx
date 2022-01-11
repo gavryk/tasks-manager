@@ -1,11 +1,17 @@
 import React from 'react';
+import style from './Task.module.scss';
 
-const Task = ({title}) => {
+const Task = ({title, description}) => {
     return (
-        <div>
-            <h2>{title}</h2>
+      <div className={style.taskCard}>
+        <div className={style.taskTitle}>
+          <h2>{title}</h2>
         </div>
-    )
+        <div className={style.taskDescription}>
+            <span>{description}</span>
+        </div>
+      </div>
+    );
 }
 
 export default Task
