@@ -1,21 +1,51 @@
 {
   "groups": [
     {
-      "id": "be7wl8kcdf",
-      "title": "React",
-      "color": "#0cc8ed"
-    },
-    {
       "id": "p23a2hptdog",
       "title": "JS",
       "color": "#c3e70d"
+    },
+    {
+      "id": "2ckwz0x59mf",
+      "title": "React",
+      "color": "#05c5eb",
+      "active": false,
+      "tasks": []
     }
   ],
   "tasks": [
     {
-      "id": 1,
-      "groupId": "be7wl8kcdf",
-      "title": "test2222",
+      "id": "i5t9haa3gld",
+      "groupId": "2ckwz0x59mf",
+      "title": "Test Task",
+      "description": "Test Description",
+      "done": false
+    },
+    {
+      "id": "42hy49rsdhn",
+      "groupId": "p23a2hptdog",
+      "title": "Test Task",
+      "description": "Test Description",
+      "done": false
+    },
+    {
+      "id": "ixbyq4a53km",
+      "groupId": "p23a2hptdog",
+      "title": "Test Task",
+      "description": "Test Description",
+      "done": false
+    },
+    {
+      "id": "5zmt4s12ygf",
+      "groupId": "2ckwz0x59mf",
+      "title": "Test Task",
+      "description": "Test Description",
+      "done": false
+    },
+    {
+      "id": "99wlm41nnep",
+      "groupId": "2ckwz0x59mf",
+      "title": "Test Task",
       "description": "Test Description",
       "done": false
     }

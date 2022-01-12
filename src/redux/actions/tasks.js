@@ -8,6 +8,20 @@ export const fetchTasks = () => {
   };
 };
 
+export const onAddTask = (task) => {
+    return async (dispatch) => {
+        await axios.post('/tasks', task);
+        dispatch(addTask(task));
+    }
+}
+
+export const addTask = (task) => {
+    return {
+        type: "ADD_TASK",
+        payload: task
+    }
+}
+
 export const setTasks = (items) => {
   return {
     type: "SET_TASKS",

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Task from '../../components/TasksGroup/Tasks/Task/Task';
-import { setActiveTasks } from '../../redux/actions/tasksGroup';
+import { fetchTasksGroups, setActiveTasks } from '../../redux/actions/tasksGroup';
 
 import style from './Home.module.scss';
 
@@ -10,6 +10,7 @@ const Home = ({tasks}) => {
 
     useEffect(() => {
         dispatch(setActiveTasks({}));
+        dispatch(fetchTasksGroups());
     }, [dispatch])
 
     return (

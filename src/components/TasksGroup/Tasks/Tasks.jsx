@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { AddButton, Task } from "../..";
+import { onAddTask } from "../../../redux/actions/tasks";
 import { getActiveTasks } from "../../../redux/actions/tasksGroup";
 
 import style from "./Tasks.module.scss";
@@ -16,7 +17,15 @@ const Tasks = () => {
   }, [id, dispatch]);
 
   const toggleTest = () => {
-    console.log(id);
+    const task = {
+      id: Math.random().toString(36).substr(2, 15),
+      groupId: id,
+      title: 'Test Task',
+      description: 'Test Description',
+      done: false
+    }; 
+    dispatch(onAddTask(task));
+    dispatch(getActiveTasks(id));
   }
 
   return (

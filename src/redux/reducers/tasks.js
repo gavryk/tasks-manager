@@ -9,6 +9,11 @@ const tasks = (state = initState, action) => {
         ...state,
         items: action.payload,
       };
+    case "ADD_TASK":
+        return {
+            ...state,
+            items: [...state.items, action.payload]
+        }
     default:
       return state;
   }
