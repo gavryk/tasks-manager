@@ -1,6 +1,5 @@
 const initState = {
   groups: [],
-  selectedGroup: null,
   activeTasks: []
 };
 

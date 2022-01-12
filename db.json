@@ -1,79 +1,23 @@
 {
-  "tasksGroups": [
+  "groups": [
     {
       "id": "be7wl8kcdf",
       "title": "React",
-      "color": "#0cc8ed",
-      "active": false,
-      "tasks": [
-        {
-          "id": 1, 
-          "title": "test",
-          "description": "test description",
-          "done": false
-        },
-        {
-          "id": 2, 
-          "title": "test2",
-          "description": "test description",
-          "done": false
-        },
-        {
-          "id": 3, 
-          "title": "test3",
-          "description": "test description",
-          "done": false
-        },
-        {
-          "id": 4, 
-          "title": "test4",
-          "description": "test description",
-          "done": false
-        },
-        {
-          "id": 5, 
-          "title": "test5",
-          "description": "test description",
-          "done": false
-        },
-        {
-          "id": 6, 
-          "title": "test5",
-          "description": "test description",
-          "done": false
-        },
-        {
-          "id": 7, 
-          "title": "test5",
-          "description": "test description",
-          "done": false
-        },
-        {
-          "id": 8, 
-          "title": "test5",
-          "description": "test description",
-          "done": false
-        },
-        {
-          "id": 9, 
-          "title": "test5",
-          "description": "test description",
-          "done": false
-        },
-        {
-          "id": 10, 
-          "title": "test5",
-          "description": "test description",
-          "done": false
-        }
-      ]
+      "color": "#0cc8ed"
     },
     {
       "id": "p23a2hptdog",
       "title": "JS",
-      "color": "#c3e70d",
-      "active": false,
-      "tasks": []
+      "color": "#c3e70d"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "groupId": "be7wl8kcdf",
+      "title": "test2222",
+      "description": "Test Description",
+      "done": false
     }
   ]
 }

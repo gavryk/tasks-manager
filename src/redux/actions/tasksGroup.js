@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchTasksGroups = () => {
   return async (dispatch) => {
-    await axios.get(`/tasksGroups`).then(({ data }) => {
+    await axios.get(`/groups?_embed=tasks`).then(({ data }) => {
       dispatch(setTasksGroup(data));
     });
   };
@@ -11,14 +11,14 @@ export const fetchTasksGroups = () => {
 
 export const postTaskGroup = (task) => {
   return async (dispatch) => {
-    let { data } = await axios.post(`/tasksGroups`, task);
+    let { data } = await axios.post(`/groups`, task);
     dispatch(addTaskGroup(data));
   };
 };
 
 export const deleteTaskGroup = (id) => {
   return async (dispatch) => {
-    axios.delete(`/tasksGroups/${id}`).then(() => {
+    axios.delete(`/groups/${id}`).then(() => {
       dispatch(removeTaskGroup(id));
     });
   };
@@ -26,7 +26,7 @@ export const deleteTaskGroup = (id) => {
 
 export const getActiveTasks = (id) => {
   return async (dispatch) => {
-    axios.get(`/tasksGroups/${id}`).then(({data}) => {
+    axios.get(`/groups/${id}?_embed=tasks`).then(({ data }) => {
       dispatch(setActiveTasks(data));
     });
   };

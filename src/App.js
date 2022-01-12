@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { fetchTasksGroups } from "./redux/actions/tasksGroup";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import { fetchTasks } from "./redux/actions/tasks";
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchTasksGroups());
+    dispatch(fetchTasks());
   }, [dispatch]);
 
 
@@ -36,7 +38,7 @@ const App = () => {
           <Route exact path="/" element={<Home tasks={groups} />} />
           <Route
             path="/list/:id"
-            element={<Tasks activeTasks={activeTasks} />}
+            element={<Tasks />}
           />
         </Routes>
       </div>
