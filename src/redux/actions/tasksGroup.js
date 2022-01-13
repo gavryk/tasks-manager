@@ -24,14 +24,6 @@ export const deleteTaskGroup = (id) => {
   };
 };
 
-export const getActiveTasks = (id) => {
-  return async (dispatch) => {
-    axios.get(`/groups/${id}?_embed=tasks`).then(({ data }) => {
-      dispatch(setActiveTasks(data));
-    });
-  };
-};
-
 export const setTasksGroup = (items) => {
   return {
     type: "SET_GROUP",
@@ -53,9 +45,9 @@ export const removeTaskGroup = (id) => {
   };
 };
 
-export const setActiveTasks = (tasks) => {
+export const setActiveTasks = (id) => {
   return {
     type: "SET_ACTIVE_TASKS",
-    payload: tasks
+    payload: id
   };
 }

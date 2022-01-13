@@ -21,9 +21,10 @@ const tasksGroup = (state = initState, action) => {
         groups: [...state.groups.filter(group => group.id !== action.payload)]
       };
     case "SET_ACTIVE_TASKS":
+      const activeTsk = state.groups.find(group => group.id === action.payload);
       return {
         ...state,
-        activeTasks: action.payload
+        activeTasks: activeTsk ? activeTsk : []
       };  
     default:
       return state;

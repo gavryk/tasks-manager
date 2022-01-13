@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Task from '../../components/TasksGroup/Tasks/Task/Task';
-import { fetchTasksGroups, setActiveTasks } from '../../redux/actions/tasksGroup';
+import { setActiveTasks } from '../../redux/actions/tasksGroup';
 
 import style from './Home.module.scss';
 
@@ -9,9 +9,8 @@ const Home = ({tasks}) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(setActiveTasks({}));
-        dispatch(fetchTasksGroups());
-    }, [dispatch])
+      dispatch(setActiveTasks());
+    }, [dispatch]);
 
     return (
       <div className={style.allTasksWrapper}>

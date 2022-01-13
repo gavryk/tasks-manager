@@ -3,46 +3,40 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { AddButton, Task } from "../..";
 import { onAddTask } from "../../../redux/actions/tasks";
-import { getActiveTasks } from "../../../redux/actions/tasksGroup";
+import { setActiveTasks } from "../../../redux/actions/tasksGroup";
 
 import style from "./Tasks.module.scss";
 
-const Tasks = () => {
+const Tasks = React.memo(({ activeTasks, isLoaded }) => {
   const dispatch = useDispatch();
-  const { activeTasks } = useSelector(({ tasksGroup }) => tasksGroup);
+  const { groups } = useSelector(({ tasksGroup }) => tasksGroup);
   const { id } = useParams();
 
   useEffect(() => {
-    dispatch(getActiveTasks(id));
-  }, [id, dispatch]);
+    dispatch(setActiveTasks(id));
+  }, [dispatch, id, groups]);
 
   const toggleTest = () => {
     const task = {
       id: Math.random().toString(36).substr(2, 15),
       groupId: id,
-      title: 'Test Task',
-      description: 'Test Description',
-      done: false
-    }; 
+      title: "Test Task",
+      description: "Test Description",
+      done: false,
+    };
     dispatch(onAddTask(task));
-    dispatch(getActiveTasks(id));
-  }
+    dispatch(setActiveTasks(id));
+  };
 
   return (
     <div className={style.tasksWrapper}>
-        {activeTasks.tasks &&
-          activeTasks.tasks.map((task, index) => {
-            return (
-                  <Task 
-                      key={`${task.title}_${index}`} 
-                      {...task} 
-                  />
-              )
-          })
-        }
-        <AddButton title="Add New Task" toggle={toggleTest} />
+      {activeTasks.tasks &&
+        activeTasks.tasks.map((task, index) => {
+          return <Task key={`${task.title}_${index}`} {...task} />;
+        })}
+      <AddButton title="Add New Task" toggle={toggleTest} />
     </div>
   );
-};
+});
 
 export default Tasks;

@@ -11,8 +11,7 @@ import { fetchTasks } from "./redux/actions/tasks";
 const App = () => {
   const dispatch = useDispatch();
   const [sidebarActive, setSidebarActive] = useState(true);
-  const { groups } = useSelector(({ tasksGroup }) => tasksGroup);
-  const { activeTasks } = useSelector(({ tasksGroup }) => tasksGroup);
+  const { groups, activeTasks } = useSelector(({ tasksGroup }) => tasksGroup);
 
   const handleSidebar = () => {
     setSidebarActive(!sidebarActive);
@@ -21,9 +20,8 @@ const App = () => {
   useEffect(() => {
     dispatch(fetchTasksGroups());
     dispatch(fetchTasks());
+
   }, [dispatch]);
-
-
 
   return (
     <div className="todo-wrapper">
@@ -36,10 +34,7 @@ const App = () => {
         />
         <Routes>
           <Route exact path="/" element={<Home tasks={groups} />} />
-          <Route
-            path="/list/:id"
-            element={<Tasks />}
-          />
+          <Route path="/list/:id" element={<Tasks activeTasks={activeTasks} />} />
         </Routes>
       </div>
     </div>
