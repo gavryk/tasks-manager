@@ -30,16 +30,6 @@ const tasksGroup = (state = initState, action) => {
         ...state,
         activeTasks: activeTsk ? activeTsk : [],
       };
-    case "DND_SORT_TASKS":
-      let actTsk = state.groups.find(
-        (group) => group.id === action.id
-      );
-      actTsk.tasks = action.payload;
-
-      return {
-        ...state,
-        activeTasks: actTsk,
-      };
     default:
       return state;
   }

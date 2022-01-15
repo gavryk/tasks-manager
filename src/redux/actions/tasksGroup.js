@@ -24,12 +24,6 @@ export const deleteTaskGroup = (id) => {
   };
 };
 
-export const updateTasks = (id, tasks) => {
-  return async (dispatch) => {
-    dispatch(dndSort(id, tasks));
-  };
-};
-
 export const setTasksGroup = (items) => {
   return {
     type: "SET_GROUP",

@@ -3,7 +3,23 @@
     {
       "id": "p23a2hptdog",
       "title": "JS",
-      "color": "#c3e70d"
+      "color": "#c3e70d",
+      "tasks": [
+        {
+          "id": "ixbyq4a53km",
+          "groupId": "p23a2hptdog",
+          "title": "Test Blabla",
+          "description": "Test Description",
+          "done": false
+        },
+        {
+          "id": "42hy49rsdhn",
+          "groupId": "p23a2hptdog",
+          "title": "Learn React",
+          "description": "Test Description",
+          "done": false
+        }
+      ]
     },
     {
       "id": "2ckwz0x59mf",
@@ -32,6 +48,13 @@
       "id": "ixbyq4a53km",
       "groupId": "p23a2hptdog",
       "title": "Test Blabla",
+      "description": "Test Description",
+      "done": false
+    },
+    {
+      "id": "bymj526drs",
+      "groupId": "2ckwz0x59mf",
+      "title": "Test Task",
       "description": "Test Description",
       "done": false
     }

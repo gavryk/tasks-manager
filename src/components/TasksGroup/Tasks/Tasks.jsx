@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { AddButton, Task } from "../..";
 import { onAddTask } from "../../../redux/actions/tasks";
-import { setActiveTasks, updateTasks } from "../../../redux/actions/tasksGroup";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { setActiveTasks } from "../../../redux/actions/tasksGroup";
 
 import style from "./Tasks.module.scss";
 
@@ -29,42 +28,15 @@ const Tasks = React.memo(({ activeTasks }) => {
     dispatch(setActiveTasks(id));
   };
 
-  const handleOnDragEnd = (result) => {
-    const items = Array.from(activeTasks.tasks);
-    const [reorderedItem] = items.splice(result.source.index, 1);
-    items.splice(result.destination.index, 0, reorderedItem);
-    
-    dispatch(updateTasks(id, items));
-  }
-
   return (
     <div>
-      <DragDropContext onDragEnd={handleOnDragEnd}>
-        <Droppable droppableId="tasksWrapper">
-          {(provided) => (
-            <div
-              className={style.tasksWrapper}
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-            >
-              {activeTasks.tasks &&
-                activeTasks.tasks.map((task, index) => {
-                  return (
-                    <Draggable
-                      key={task.id}
-                      draggableId={task.id}
-                      index={index}
-                    >
-                      {(provided) => <Task {...task} provided={provided} />}
-                    </Draggable>
-                  );
-                })}
-              <AddButton title="Add New Task" toggle={toggleTest} />
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
-      </DragDropContext>
+      <div className={style.tasksWrapper}>
+        {activeTasks.tasks &&
+          activeTasks.tasks.map((task) => {
+            return <Task {...task} />;
+          })}
+        <AddButton title="Add New Task" toggle={toggleTest} />
+      </div>
     </div>
   );
 });
