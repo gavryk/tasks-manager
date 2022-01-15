@@ -18,14 +18,28 @@ const tasksGroup = (state = initState, action) => {
     case "REMOVE_GROUP":
       return {
         ...state,
-        groups: [...state.groups.filter(group => group.id !== action.payload)]
+        groups: [
+          ...state.groups.filter((group) => group.id !== action.payload),
+        ],
       };
     case "SET_ACTIVE_TASKS":
-      const activeTsk = state.groups.find(group => group.id === action.payload);
+      const activeTsk = state.groups.find(
+        (group) => group.id === action.payload
+      );
       return {
         ...state,
-        activeTasks: activeTsk ? activeTsk : []
-      };  
+        activeTasks: activeTsk ? activeTsk : [],
+      };
+    case "DND_SORT_TASKS":
+      let actTsk = state.groups.find(
+        (group) => group.id === action.id
+      );
+      actTsk.tasks = action.payload;
+
+      return {
+        ...state,
+        activeTasks: actTsk,
+      };
     default:
       return state;
   }

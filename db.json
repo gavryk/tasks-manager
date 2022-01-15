@@ -11,48 +11,27 @@
       "color": "#05c5eb",
       "active": false,
       "tasks": []
+    },
+    {
+      "id": "ai3j15c7kkl",
+      "title": "Test",
+      "color": "#d115ae",
+      "active": false,
+      "tasks": []
     }
   ],
   "tasks": [
     {
-      "id": "i5t9haa3gld",
-      "groupId": "2ckwz0x59mf",
-      "title": "Test Task",
-      "description": "Test Description",
-      "done": false
-    },
-    {
       "id": "42hy49rsdhn",
       "groupId": "p23a2hptdog",
-      "title": "Test Task",
+      "title": "Learn React",
       "description": "Test Description",
       "done": false
     },
     {
       "id": "ixbyq4a53km",
       "groupId": "p23a2hptdog",
-      "title": "Test Task",
-      "description": "Test Description",
-      "done": false
-    },
-    {
-      "id": "5zmt4s12ygf",
-      "groupId": "2ckwz0x59mf",
-      "title": "Test Task",
-      "description": "Test Description",
-      "done": false
-    },
-    {
-      "id": "99wlm41nnep",
-      "groupId": "2ckwz0x59mf",
-      "title": "Test Task",
-      "description": "Test Description",
-      "done": false
-    },
-    {
-      "id": "m6wa5azlaz",
-      "groupId": "p23a2hptdog",
-      "title": "Test Task",
+      "title": "Test Blabla",
       "description": "Test Description",
       "done": false
     }

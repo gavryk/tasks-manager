@@ -24,6 +24,12 @@ export const deleteTaskGroup = (id) => {
   };
 };
 
+export const updateTasks = (id, tasks) => {
+  return async (dispatch) => {
+    dispatch(dndSort(id, tasks));
+  };
+};
+
 export const setTasksGroup = (items) => {
   return {
     type: "SET_GROUP",
@@ -49,5 +55,13 @@ export const setActiveTasks = (id) => {
   return {
     type: "SET_ACTIVE_TASKS",
     payload: id
+  };
+}
+
+export const dndSort = (id, tasks) => {
+  return {
+    type: "DND_SORT_TASKS",
+    id: id,
+    payload: tasks
   };
 }

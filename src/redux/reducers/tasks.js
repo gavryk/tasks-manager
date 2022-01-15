@@ -10,10 +10,10 @@ const tasks = (state = initState, action) => {
         items: action.payload,
       };
     case "ADD_TASK":
-        return {
-            ...state,
-            items: [...state.items, action.payload]
-        }
+      return {
+        ...state,
+        items: [...state.items, action.payload],
+      };
     default:
       return state;
   }
