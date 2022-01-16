@@ -5,7 +5,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import style from './AddGroupForm.module.scss';
 
-const AddGroupForm = ({ addGroup, visible, toggleAddPopup, setVisibleAddPopup }) => {
+const AddGroupForm = ({ addGroup, visible, toggleAddPopup }) => {
   const [inputNameValue, setInputNameValue] = useState("");
   const [inputColorValue, setInputColorValue] = useState("#000000");
   const popupRef = useRef();

@@ -1,4 +1,5 @@
 import axios from "axios";
+// import { updateTasksSort } from "./tasks";
 //"server": "npx json-server --watch db.json --port=3001"
 
 export const fetchTasksGroups = () => {
@@ -23,6 +24,13 @@ export const deleteTaskGroup = (id) => {
     });
   };
 };
+
+// export const updateTasks = (id, tasks) => {
+//   return async (dispatch) => {
+//     dispatch(dndSort(id, tasks));
+//     dispatch(updateTasksSort(id, tasks));
+//   };
+// };
 
 export const setTasksGroup = (items) => {
   return {

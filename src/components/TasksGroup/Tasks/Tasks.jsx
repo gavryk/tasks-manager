@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { AddButton, Task } from "../..";
-import { onAddTask } from "../../../redux/actions/tasks";
 import { setActiveTasks } from "../../../redux/actions/tasksGroup";
+import AddTaskForm from "../../AddTaskForm/AddTaskForm";
 
 import style from "./Tasks.module.scss";
 
@@ -11,21 +11,28 @@ const Tasks = React.memo(({ activeTasks }) => {
   const dispatch = useDispatch();
   const { groups } = useSelector(({ tasksGroup }) => tasksGroup);
   const { id } = useParams();
+  const [visibleTaskForm, setVisibleTaskForm] = useState(false);
 
   useEffect(() => {
     dispatch(setActiveTasks(id));
   }, [dispatch, id, groups]);
 
-  const toggleTest = () => {
-    const task = {
-      id: Math.random().toString(36).substr(2, 15),
-      groupId: id,
-      title: "Test Task",
-      description: "Test Description",
-      done: false,
-    };
-    dispatch(onAddTask(task));
-    dispatch(setActiveTasks(id));
+  const showAddForm = () => {
+    // const task = {
+    //   id: Math.random().toString(36).substr(2, 15),
+    //   groupId: id,
+    //   title: "Test Task",
+    //   description: "Test Description",
+    //   done: false,
+    // };
+    // dispatch(onAddTask(task));
+    // dispatch(setActiveTasks(id));
+
+    setVisibleTaskForm(!visibleTaskForm);
+  };
+
+  const handleAddTask = () => {
+    console.log({ test: "text" });
   };
 
   return (
@@ -33,9 +40,14 @@ const Tasks = React.memo(({ activeTasks }) => {
       <div className={style.tasksWrapper}>
         {activeTasks.tasks &&
           activeTasks.tasks.map((task) => {
-            return <Task {...task} />;
+            return <Task key={task.id} {...task} />;
           })}
-        <AddButton title="Add New Task" toggle={toggleTest} />
+        <AddButton title="Add New Task" toggle={showAddForm} />
+        <AddTaskForm
+          visible={visibleTaskForm}
+          addTask={handleAddTask}
+          toggleAddForm={showAddForm}
+        />
       </div>
     </div>
   );
