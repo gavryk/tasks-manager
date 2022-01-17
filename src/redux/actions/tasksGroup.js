@@ -25,12 +25,11 @@ export const deleteTaskGroup = (id) => {
   };
 };
 
-// export const updateTasks = (id, tasks) => {
-//   return async (dispatch) => {
-//     dispatch(dndSort(id, tasks));
-//     dispatch(updateTasksSort(id, tasks));
-//   };
-// };
+export const updateTasks = (id, tasks) => {
+  return async (dispatch) => {
+    dispatch(updTsk(id, tasks));
+  };
+};
 
 export const setTasksGroup = (items) => {
   return {
@@ -60,10 +59,10 @@ export const setActiveTasks = (id) => {
   };
 }
 
-export const dndSort = (id, tasks) => {
+export const updTsk = (id, tasks) => {
   return {
-    type: "DND_SORT_TASKS",
+    type: "UPDATE_TASKS",
     id: id,
-    payload: tasks
+    payload: tasks,
   };
-}
+};

@@ -5,9 +5,9 @@ import { reduxForm } from 'redux-form';
 
 import style from './AddTaskForm.module.scss';
 
-const AddTaskForm = ({ visible, showAddForm, toggleAddForm }) => {
+const AddTaskForm = ({ visible, toggleAddForm, addTask }) => {
   const [inputTitleValue, setInputTitleValue] = useState("");
-  const [inputDescriptionValue, setInputDescriptionValue] = useState("#000000");
+  const [inputDescriptionValue, setInputDescriptionValue] = useState("");
   const taskFromRef = useRef();
 
   const setTitle = (e) => {
@@ -17,7 +17,13 @@ const AddTaskForm = ({ visible, showAddForm, toggleAddForm }) => {
     setInputDescriptionValue(e.currentTarget.value);
   };
 
-  const handleTask = () => {};
+  const handleTask = () => {
+    if (inputTitleValue !== "") {
+      addTask(inputTitleValue, inputDescriptionValue);
+      inputTitleValue("");
+      inputDescriptionValue("");
+    }
+  };
 
   return (
     <div
@@ -41,21 +47,27 @@ const AddTaskForm = ({ visible, showAddForm, toggleAddForm }) => {
 const Form = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
-      <div>
+      <div className="form-floating mb-3">
         <input
-          className="form-control form-control-l"
+          className="form-control form-control-lg"
           type="text"
           placeholder="Task Title"
           value={props.inputTitleValue}
           onChange={props.setTitle}
+          id="floatingTitle"
         />
-        <input
+        <label htmlFor="floatingTitle">Task Title</label>
+      </div>
+      <div className="form-floating">
+        <textarea
           className="form-control form-control-l"
           type="text"
           placeholder="Task Description"
           value={props.inputDescriptionValue}
           onChange={props.setDescription}
+          id="floatingTextarea"
         />
+        <label htmlFor="floatingTextarea">Task Description</label>
       </div>
       <button type="submit">Add Task</button>
     </form>

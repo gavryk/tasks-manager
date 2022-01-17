@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { AddButton, Task } from "../..";
-import { setActiveTasks } from "../../../redux/actions/tasksGroup";
+import { onAddTask } from "../../../redux/actions/tasks";
+import { setActiveTasks, updateTasks } from "../../../redux/actions/tasksGroup";
 import AddTaskForm from "../../AddTaskForm/AddTaskForm";
 
 import style from "./Tasks.module.scss";
@@ -18,37 +19,35 @@ const Tasks = React.memo(({ activeTasks }) => {
   }, [dispatch, id, groups]);
 
   const showAddForm = () => {
-    // const task = {
-    //   id: Math.random().toString(36).substr(2, 15),
-    //   groupId: id,
-    //   title: "Test Task",
-    //   description: "Test Description",
-    //   done: false,
-    // };
-    // dispatch(onAddTask(task));
-    // dispatch(setActiveTasks(id));
-
     setVisibleTaskForm(!visibleTaskForm);
   };
 
-  const handleAddTask = () => {
-    console.log({ test: "text" });
+  const handleAddTask = (title, description) => {
+    const task = {
+      id: Math.random().toString(36).substr(2, 15),
+      groupId: id,
+      title: title,
+      description: description,
+      done: false,
+    };
+    dispatch(onAddTask(task));
+    dispatch(setActiveTasks(id));
+    dispatch(updateTasks(id, task));
+    setVisibleTaskForm(false);
   };
 
   return (
-    <div>
-      <div className={style.tasksWrapper}>
-        {activeTasks.tasks &&
-          activeTasks.tasks.map((task) => {
-            return <Task key={task.id} {...task} />;
-          })}
-        <AddButton title="Add New Task" toggle={showAddForm} />
-        <AddTaskForm
-          visible={visibleTaskForm}
-          addTask={handleAddTask}
-          toggleAddForm={showAddForm}
-        />
-      </div>
+    <div className={style.tasksWrapper}>
+      {activeTasks.tasks &&
+        activeTasks.tasks.map((task) => {
+          return <Task key={task.id} {...task} />;
+        })}
+      <AddButton title="Add New Task" toggle={showAddForm} />
+      <AddTaskForm
+        visible={visibleTaskForm}
+        addTask={handleAddTask}
+        toggleAddForm={showAddForm}
+      />
     </div>
   );
 });

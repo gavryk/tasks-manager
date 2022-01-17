@@ -1,4 +1,5 @@
 .addTaskForm {
+    display: none;
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s ease-in-out;
@@ -7,9 +8,11 @@
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
     position: relative;
     padding: 20px;
+    // max-width: 500px;
     &.active {
       visibility: visible;
       opacity: 1;
+      display: block;
     }
     .close {
       position: absolute;
@@ -36,16 +39,23 @@
     form {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
       flex-direction: row;
       div {
         flex-basis: 100%;
         max-width: 100%;
         margin-bottom: 15px;
+        input {
+            min-height: 50px;
+        }
+        textarea {
+            min-height: 100px;
+        }
       }
       button {
         width: 100%;
+        max-width: 200px;
         border: none;
         outline: none;
         background-color: #4dd599;

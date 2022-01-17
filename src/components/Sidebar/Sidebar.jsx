@@ -24,7 +24,6 @@ const Sidebar = ({ sidebarAct, items }) => {
       active: false,
       tasks: []
     };
-
     addGroup(task);
     setVisibleAddPopup(!visibleAddPopup);
   };
