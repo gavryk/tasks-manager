@@ -8,7 +8,7 @@
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
     position: relative;
     padding: 20px;
-    // max-width: 500px;
+    max-width: 700px;
     &.active {
       visibility: visible;
       opacity: 1;
@@ -42,7 +42,7 @@
       justify-content: flex-start;
       flex-wrap: wrap;
       flex-direction: row;
-      div {
+      > div {
         flex-basis: 100%;
         max-width: 100%;
         margin-bottom: 15px;
@@ -65,6 +65,12 @@
         transition: all 0.3s ease-in-out;
         &:hover {
           background: darken(#4dd599, 10%);
+        }
+        &:disabled {
+          opacity: .5;
+          &:hover {
+            background-color: #4dd599;
+          }
         }
       }
     }

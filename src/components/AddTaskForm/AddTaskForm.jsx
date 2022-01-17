@@ -1,11 +1,11 @@
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useRef, useState } from 'react';
-import { reduxForm } from 'redux-form';
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useRef, useState } from "react";
+import { reduxForm } from "redux-form";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
-import style from './AddTaskForm.module.scss';
+import style from "./AddTaskForm.module.scss";
 
 const AddTaskForm = ({ visible, toggleAddForm, addTask }) => {
   const [inputTitleValue, setInputTitleValue] = useState("");
@@ -20,7 +20,7 @@ const AddTaskForm = ({ visible, toggleAddForm, addTask }) => {
   };
 
   const handleTask = () => {
-    if (inputTitleValue !== "") {
+    if (inputTitleValue !== "" || inputDescriptionValue !== '') {
       addTask(inputTitleValue, inputDescriptionValue);
       inputTitleValue("");
       inputDescriptionValue("");
@@ -64,6 +64,21 @@ const Form = (props) => {
       <div>
         <CKEditor
           editor={props.ClassicEditor}
+          config={{
+            toolbar: [
+              "heading",
+              "|",
+              "bold",
+              "italic",
+              "blockQuote",
+              "link",
+              "numberedList",
+              "bulletedList",
+              "|",
+              "undo",
+              "redo",
+            ],
+          }}
           data={props.inputDescriptionValue}
           onChange={(event, editor) => {
             const data = editor.getData();
@@ -82,7 +97,12 @@ const Form = (props) => {
         />
         <label htmlFor="floatingTextarea">Task Description</label>
       </div> */}
-      <button type="submit">Add Task</button>
+      <button
+        disabled={(props.inputTitleValue || props.inputDescriptionValue) === ""}
+        type="submit"
+      >
+        Add Task
+      </button>
     </form>
   );
 };
