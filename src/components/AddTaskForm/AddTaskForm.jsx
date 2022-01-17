@@ -2,6 +2,8 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useRef, useState } from 'react';
 import { reduxForm } from 'redux-form';
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 import style from './AddTaskForm.module.scss';
 
@@ -13,8 +15,8 @@ const AddTaskForm = ({ visible, toggleAddForm, addTask }) => {
   const setTitle = (e) => {
     setInputTitleValue(e.currentTarget.value);
   };
-  const setDescription = (e) => {
-    setInputDescriptionValue(e.currentTarget.value);
+  const setDescription = (text) => {
+    setInputDescriptionValue(text);
   };
 
   const handleTask = () => {
@@ -39,6 +41,7 @@ const AddTaskForm = ({ visible, toggleAddForm, addTask }) => {
         inputDescriptionValue={inputDescriptionValue}
         setTitle={setTitle}
         setDescription={setDescription}
+        ClassicEditor={ClassicEditor}
       />
     </div>
   );
@@ -58,7 +61,17 @@ const Form = (props) => {
         />
         <label htmlFor="floatingTitle">Task Title</label>
       </div>
-      <div className="form-floating">
+      <div>
+        <CKEditor
+          editor={props.ClassicEditor}
+          data={props.inputDescriptionValue}
+          onChange={(event, editor) => {
+            const data = editor.getData();
+            props.setDescription(data);
+          }}
+        />
+      </div>
+      {/* <div className="form-floating">
         <textarea
           className="form-control form-control-l"
           type="text"
@@ -68,7 +81,7 @@ const Form = (props) => {
           id="floatingTextarea"
         />
         <label htmlFor="floatingTextarea">Task Description</label>
-      </div>
+      </div> */}
       <button type="submit">Add Task</button>
     </form>
   );

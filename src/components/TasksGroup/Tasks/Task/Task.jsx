@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./Task.module.scss";
+import parse from "html-react-parser";
 
 const Task = ({ title, description }) => {
   
@@ -11,7 +12,7 @@ const Task = ({ title, description }) => {
         <h2>{title}</h2>
       </div>
       <div className={style.taskDescription}>
-        <span>{description}</span>
+        <span>{parse(description)}</span>
       </div>
     </div>
   );

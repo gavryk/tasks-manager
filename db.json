@@ -57,6 +57,13 @@
       "title": "Learn React",
       "description": "Yeap!!!",
       "done": false
+    },
+    {
+      "id": "vz91i4rsr5",
+      "groupId": "p23a2hptdog",
+      "title": "Test 2",
+      "description": "<p><a href=\"https://github.com/gavryk/tasks-manager\">https://github.com/gavryk/tasks-manager</a></p>",
+      "done": false
     }
   ]
 }
