@@ -1,68 +1,19 @@
 {
   "groups": [
     {
-      "id": "p23a2hptdog",
-      "title": "JS",
-      "color": "#c3e70d",
-      "tasks": [
-        {
-          "id": "ixbyq4a53km",
-          "groupId": "p23a2hptdog",
-          "title": "Test Blabla",
-          "description": "Test Description",
-          "done": false
-        },
-        {
-          "id": "42hy49rsdhn",
-          "groupId": "p23a2hptdog",
-          "title": "Learn React",
-          "description": "Test Description",
-          "done": false
-        }
-      ]
-    },
-    {
       "id": "2ckwz0x59mf",
       "title": "React",
       "color": "#05c5eb",
-      "active": false,
-      "tasks": []
-    },
-    {
-      "id": "ai3j15c7kkl",
-      "title": "Test",
-      "color": "#d115ae",
       "active": false,
       "tasks": []
     }
   ],
   "tasks": [
     {
-      "id": "bgn7y620dlq",
-      "groupId": "p23a2hptdog",
-      "title": "Oleg",
-      "description": "TEst",
-      "done": false
-    },
-    {
-      "id": "fopcebaxymq",
-      "groupId": "p23a2hptdog",
-      "title": "test",
-      "description": "test2",
-      "done": false
-    },
-    {
-      "id": "5y8pz7ojr6d",
+      "id": "br15dsiazy",
       "groupId": "2ckwz0x59mf",
-      "title": "Learn React",
-      "description": "Yeap!!!",
-      "done": false
-    },
-    {
-      "id": "vz91i4rsr5",
-      "groupId": "p23a2hptdog",
-      "title": "Test 2",
-      "description": "<p><a href=\"https://github.com/gavryk/tasks-manager\">https://github.com/gavryk/tasks-manager</a></p>",
+      "title": "New Task",
+      "description": "<p><strong>New Test Task</strong></p>",
       "done": false
     }
   ]

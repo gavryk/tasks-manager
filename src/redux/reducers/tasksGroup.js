@@ -38,6 +38,17 @@ const tasksGroup = (state = initState, action) => {
         ...state,
         activeTasks: actTsk,
       };
+    case "REMOVE_ACTIVE_TASKS":
+      const newList = state.groups.map((group) => {
+        if (group.id === action.groupId) {
+          group.tasks = group.tasks.filter((task) => task.id !== action.taskId);
+        }
+        return group;
+      });
+      return {
+        ...state,
+        groups: newList,
+      };
     default:
       return state;
   }

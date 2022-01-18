@@ -1,4 +1,5 @@
 import axios from "axios";
+import { removeActiveTasks } from "./tasksGroup";
 
 export const fetchTasks = () => {
   return async (dispatch) => {
@@ -10,9 +11,17 @@ export const fetchTasks = () => {
 
 export const onAddTask = (task) => {
     return async (dispatch) => {
-        await axios.post('/tasks', task);
+        await axios.post(`/tasks`, task);
         dispatch(addTask(task));
     }
+}
+
+export const removeTask = (groupId, taskId) => {
+  return async (dispatch) => {
+    dispatch(remove(taskId));
+    dispatch(removeActiveTasks(groupId, taskId));
+    await axios.delete(`/tasks/${taskId}`);
+  }
 }
 
 export const addTask = (task) => {
@@ -28,3 +37,10 @@ export const setTasks = (items) => {
     payload: items,
   };
 };
+
+export const remove = (id) => {
+  return {
+    type: "REMOVE_TASK",
+    payload: id
+  }
+}

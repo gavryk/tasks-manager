@@ -66,3 +66,11 @@ export const updTsk = (id, tasks) => {
     payload: tasks,
   };
 };
+
+export const removeActiveTasks = (groupId, taskId) => {
+  return {
+    type: "REMOVE_ACTIVE_TASKS",
+    groupId,
+    taskId
+  };
+}

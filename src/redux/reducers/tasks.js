@@ -14,6 +14,12 @@ const tasks = (state = initState, action) => {
         ...state,
         items: [...state.items, action.payload],
       };
+    case "REMOVE_TASK":
+      const newItems = [...state.items.filter((item) => item.id !== action.payload)]
+      return {
+        ...state,
+        items: newItems,
+      };
     default:
       return state;
   }
