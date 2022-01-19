@@ -74,3 +74,11 @@ export const removeActiveTasks = (groupId, taskId) => {
     taskId
   };
 }
+
+export const completeActiveTasks = (groupId, taskId) => {
+  return {
+    type: "COMPLETE_ACTIVE_TASKS",
+    groupId,
+    taskId,
+  };
+};

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { AddButton, Task } from "../..";
-import { onAddTask, removeTask } from "../../../redux/actions/tasks";
+import { doneTask, onAddTask, removeTask } from "../../../redux/actions/tasks";
 import { setActiveTasks, updateTasks } from "../../../redux/actions/tasksGroup";
 import AddTaskForm from "../../AddTaskForm/AddTaskForm";
 
@@ -36,6 +36,10 @@ const Tasks = React.memo(({ activeTasks }) => {
     setVisibleTaskForm(false);
   };
 
+  const handleDoneTask = (taskId) => {
+    dispatch(doneTask(id, taskId));
+  }
+
   const handleRemoveTask = (taskId) => {
     dispatch(removeTask(id, taskId));
   }
@@ -49,6 +53,7 @@ const Tasks = React.memo(({ activeTasks }) => {
               key={task.id}
               {...task}
               handleRemoveTask={handleRemoveTask}
+              handleDoneTask={handleDoneTask}
               removable={true}
               checkable={true}
             />

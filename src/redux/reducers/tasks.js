@@ -20,6 +20,17 @@ const tasks = (state = initState, action) => {
         ...state,
         items: newItems,
       };
+    case "DONE_TASK":
+      const doneItems = [...state.items.map(item => {
+        if(item.id === action.payload) {
+          item.done = !item.done;
+        }
+        return item;
+      })]
+      return {
+        ...state,
+        items: doneItems,
+      };  
     default:
       return state;
   }

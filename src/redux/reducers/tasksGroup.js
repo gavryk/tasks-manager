@@ -49,6 +49,22 @@ const tasksGroup = (state = initState, action) => {
         ...state,
         groups: newList,
       };
+    case "COMPLETE_ACTIVE_TASKS":
+      const doneTasks = state.groups.map((group) => {
+        if (group.id === action.groupId) {
+          group.tasks = group.tasks.map((task) => {
+            if(task.id === action.taskId) {
+              task.done = !task.done;
+            }
+            return task;
+          });
+        }
+        return group;
+      });
+      return {
+        ...state,
+        groups: doneTasks,
+      };
     default:
       return state;
   }

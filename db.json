@@ -17,39 +17,53 @@
   ],
   "tasks": [
     {
-      "id": "wd4o0a66bn8",
+      "id": "lw17chkznsl",
       "groupId": "2ckwz0x59mf",
-      "title": "Learn React",
-      "description": "<p>Learn React JS / Redux / Create some pet projects )</p>",
+      "title": "Test Task",
+      "description": "<p>React</p>",
+      "done": false
+    },
+    {
+      "id": "d3qmxibthre",
+      "groupId": "2ckwz0x59mf",
+      "title": "Test @",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": "smf674c6c3j",
+      "groupId": "ikesms4uu0f",
+      "title": "Test 2",
+      "description": "",
       "done": true
     },
     {
-      "id": "xp9uh142fvk",
+      "id": "j9lwa875xf9",
       "groupId": "ikesms4uu0f",
-      "title": "English",
-      "description": "<p>Learn English (ASAP)</p>",
-      "done": false
-    },
-    {
-      "id": "bwehp76ar6m",
-      "groupId": "ikesms4uu0f",
-      "title": "Speaking",
+      "title": "Task 3",
       "description": "",
       "done": false
     },
     {
-      "id": "r6kun27if3n",
+      "id": "sgl5cgb2hql",
       "groupId": "ikesms4uu0f",
-      "title": "Training",
+      "title": "Task 4",
+      "description": "",
+      "done": true
+    },
+    {
+      "id": "oetp6367bsp",
+      "groupId": "ikesms4uu0f",
+      "title": "Task 5",
       "description": "",
       "done": false
     },
     {
-      "id": "fwc1cmag4d",
-      "groupId": "2ckwz0x59mf",
-      "title": "Create CV",
-      "description": "<p>Send on <a href=\"https://www.work.ua/\">work.ua</a></p>",
-      "done": false
+      "id": "wlx8gj3heks",
+      "groupId": "ikesms4uu0f",
+      "title": "Grodasdqwe",
+      "description": "",
+      "done": true
     }
   ]
 }

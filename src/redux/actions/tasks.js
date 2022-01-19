@@ -1,5 +1,5 @@
 import axios from "axios";
-import { removeActiveTasks } from "./tasksGroup";
+import { completeActiveTasks, removeActiveTasks } from "./tasksGroup";
 
 export const fetchTasks = () => {
   return async (dispatch) => {
@@ -24,6 +24,17 @@ export const removeTask = (groupId, taskId) => {
   }
 }
 
+export const doneTask = (groupId, taskId) => {
+  return async (dispatch, getState) => {
+    const { items } = getState().tasks;
+    let doneTask = items.find((item) => item.id === taskId).done;
+    
+    dispatch(completeActiveTasks(groupId, taskId));
+  
+    await axios.patch(`/tasks/${taskId}`, { done: !doneTask });
+  };
+};
+
 export const addTask = (task) => {
     return {
         type: "ADD_TASK",
@@ -42,5 +53,12 @@ export const remove = (id) => {
   return {
     type: "REMOVE_TASK",
     payload: id
+  }
+}
+
+export const done = (taskId) => {
+  return {
+    type: "DONE_TASK",
+    payload: taskId
   }
 }
