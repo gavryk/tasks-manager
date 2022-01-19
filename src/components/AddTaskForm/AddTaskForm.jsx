@@ -22,9 +22,9 @@ const AddTaskForm = ({ visible, toggleAddForm, addTask }) => {
   const handleTask = () => {
     if (inputTitleValue !== "" || inputDescriptionValue !== '') {
       addTask(inputTitleValue, inputDescriptionValue);
-      inputTitleValue("");
-      inputDescriptionValue("");
     }
+    setInputTitleValue("");
+    setInputDescriptionValue("");
   };
 
   return (

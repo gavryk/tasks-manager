@@ -4,6 +4,44 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   background-color: #fff;
   position: relative;
+  &.checkableTask {
+    display: grid;
+    grid-template-columns: 25px auto;
+    column-gap: 20px;
+    align-items: center;
+    .taskDescription {
+      grid-column: 2;
+    }
+
+    .check {
+      text-align: center;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, .3);
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex-direction: row;
+      cursor: pointer;
+      transition: all .4s ease-in-out;
+      svg {
+        opacity: 0;
+        visibility: hidden;
+        transition: all .4s ease-in-out;
+        font-size: 12px;
+        color: #fff;
+      }
+      &.done {
+        background-color: rgba(60, 184, 11, 0.8);
+        border: 1px solid transparent;
+        svg {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
   .remove {
     transition: all 0.3s ease-in-out;
     border: none;

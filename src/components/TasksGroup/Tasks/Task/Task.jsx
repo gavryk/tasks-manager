@@ -2,11 +2,18 @@ import React from "react";
 import style from "./Task.module.scss";
 import parse from "html-react-parser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faCheck } from "@fortawesome/free-solid-svg-icons";
 
-const Task = ({ id, title, description, removable, handleRemoveTask }) => {
+const Task = ({ id, title, description, removable, handleRemoveTask, done, checkable }) => {
   return (
-    <div className={`${style.taskCard}`}>
+    <div className={`${style.taskCard} ${checkable ? style.checkableTask : ''}`}>
+      {
+        checkable && (
+          <div className={`${style.check} ${done ? style.done : ''}`}>
+            <FontAwesomeIcon icon={faCheck} />
+          </div>
+        )
+      }
       <div className={style.taskTitle}>
         <h2>{title}</h2>
       </div>

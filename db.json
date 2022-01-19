@@ -6,14 +6,49 @@
       "color": "#05c5eb",
       "active": false,
       "tasks": []
+    },
+    {
+      "id": "ikesms4uu0f",
+      "title": "Whatever",
+      "color": "#c25105",
+      "active": false,
+      "tasks": []
     }
   ],
   "tasks": [
     {
-      "id": "4pvoj714fd4",
+      "id": "wd4o0a66bn8",
       "groupId": "2ckwz0x59mf",
-      "title": "Test",
-      "description": "<p>Test</p>",
+      "title": "Learn React",
+      "description": "<p>Learn React JS / Redux / Create some pet projects )</p>",
+      "done": true
+    },
+    {
+      "id": "xp9uh142fvk",
+      "groupId": "ikesms4uu0f",
+      "title": "English",
+      "description": "<p>Learn English (ASAP)</p>",
+      "done": false
+    },
+    {
+      "id": "bwehp76ar6m",
+      "groupId": "ikesms4uu0f",
+      "title": "Speaking",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": "r6kun27if3n",
+      "groupId": "ikesms4uu0f",
+      "title": "Training",
+      "description": "",
+      "done": false
+    },
+    {
+      "id": "fwc1cmag4d",
+      "groupId": "2ckwz0x59mf",
+      "title": "Create CV",
+      "description": "<p>Send on <a href=\"https://www.work.ua/\">work.ua</a></p>",
       "done": false
     }
   ]

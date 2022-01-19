@@ -50,6 +50,7 @@ const Tasks = React.memo(({ activeTasks }) => {
               {...task}
               handleRemoveTask={handleRemoveTask}
               removable={true}
+              checkable={true}
             />
           );
         })}
