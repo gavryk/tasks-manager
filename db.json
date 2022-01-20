@@ -21,7 +21,7 @@
       "groupId": "2ckwz0x59mf",
       "title": "Test Task",
       "description": "<p>React</p>",
-      "done": false
+      "done": true
     },
     {
       "id": "d3qmxibthre",
@@ -57,13 +57,6 @@
       "title": "Task 5",
       "description": "",
       "done": false
-    },
-    {
-      "id": "wlx8gj3heks",
-      "groupId": "ikesms4uu0f",
-      "title": "Grodasdqwe",
-      "description": "",
-      "done": true
     }
   ]
 }

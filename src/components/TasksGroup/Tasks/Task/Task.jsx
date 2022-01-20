@@ -21,10 +21,10 @@ const Task = ({
 
   return (
     <div
-      className={`${style.taskCard} ${checkable ? style.checkableTask : ""}`}
+      className={`${style.taskCard} ${checkable ? style.checkableTask : ""} ${done ? style.done : ""}`}
     >
       {checkable && (
-        <div className={`${style.check} ${done ? style.done : ""}`} onClick={check}>
+        <div className={`${style.check}`} onClick={check}>
           <FontAwesomeIcon icon={faCheck} />
         </div>
       )}
@@ -32,7 +32,7 @@ const Task = ({
         <h2>{title}</h2>
       </div>
       <div className={style.taskDescription}>
-        <span>{parse(description)}</span>
+        {parse(description)}
       </div>
 
       {removable && (
