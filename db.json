@@ -1,35 +1,21 @@
 {
   "groups": [
     {
-      "id": "2ckwz0x59mf",
-      "title": "React",
-      "color": "#05c5eb",
-      "active": false,
-      "tasks": []
-    },
-    {
       "id": "ikesms4uu0f",
       "title": "Whatever",
       "color": "#c25105",
       "active": false,
       "tasks": []
+    },
+    {
+      "id": "jmsduiz9iaj",
+      "title": "React JS",
+      "color": "#00ccff",
+      "active": false,
+      "tasks": []
     }
   ],
   "tasks": [
-    {
-      "id": "lw17chkznsl",
-      "groupId": "2ckwz0x59mf",
-      "title": "Test Task",
-      "description": "<p>React</p>",
-      "done": true
-    },
-    {
-      "id": "d3qmxibthre",
-      "groupId": "2ckwz0x59mf",
-      "title": "Test @",
-      "description": "",
-      "done": false
-    },
     {
       "id": "smf674c6c3j",
       "groupId": "ikesms4uu0f",
@@ -57,6 +43,13 @@
       "title": "Task 5",
       "description": "",
       "done": false
+    },
+    {
+      "id": "4xnvkxgxmxp",
+      "groupId": "jmsduiz9iaj",
+      "title": "Test React Task",
+      "description": "<p>Hello <a href=\"https://github.com/gavryk\">GitHub</a></p>",
+      "done": true
     }
   ]
 }

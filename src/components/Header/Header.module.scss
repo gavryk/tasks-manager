@@ -61,6 +61,31 @@
       font-size: 56px;
       text-align: center;
       color: #fff;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      &:hover {
+        .editBtn {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      .editBtn {
+        border: none;
+        background-color: transparent;
+        margin-left: 10px;
+        max-width: 30px;
+        display: inline-flex;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .2s ease-in-out;
+        svg {
+          color: #fff;
+          font-size: 20px;
+          width: 100%;
+        }
+      }
     }
     &.white {
       h1 {
