@@ -1,9 +1,10 @@
 .taskCard {
-  padding: 15px 20px;
+  padding: 17px 20px;
   border-radius: 15px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   background-color: #fff;
   position: relative;
+  overflow: hidden;
   &.checkableTask {
     display: grid;
     grid-template-columns: 25px auto;
@@ -55,6 +56,26 @@
       }
     }
   }
+  .status {
+    position: absolute;
+    width: auto;
+    top: 0;
+    right: 0;
+    padding: 2px 7px;
+    text-align: center;
+    span {
+      line-height: 1;
+      font-size: 14px;
+      color: #fff;
+    }
+    &.statusDone {
+      background-color: rgb(10, 190, 10);
+    }
+    &.statusInProcess {
+      background-color: rgb(235, 219, 1);
+    }
+  }
+
   .remove {
     transition: all 0.3s ease-in-out;
     border: none;
