@@ -5,7 +5,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import style from './AddGroupForm.module.scss';
 
-const AddGroupForm = ({ addGroup, visible, toggleAddPopup }) => {
+const AddGroupForm = ({ handleFunction, visible, toggleAddPopup, buttonLabel }) => {
   const [inputNameValue, setInputNameValue] = useState("");
   const [inputColorValue, setInputColorValue] = useState("#000000");
   const popupRef = useRef();
@@ -19,7 +19,7 @@ const AddGroupForm = ({ addGroup, visible, toggleAddPopup }) => {
 
   const handleGroup = () => {
     if (inputNameValue !== "") {
-      addGroup(inputNameValue, inputColorValue);
+      handleFunction(inputNameValue, inputColorValue);
       setInputNameValue("");
       setInputColorValue("#000000");
     }
@@ -39,6 +39,7 @@ const AddGroupForm = ({ addGroup, visible, toggleAddPopup }) => {
         inputColorValue={inputColorValue}
         setName={setName}
         setColor={setColor}
+        buttonLabel={buttonLabel}
       />
     </div>
   );
@@ -68,7 +69,7 @@ const Form = (props) => {
           title="Choose your color"
         ></input>
       </div>
-      <button type="submit">Add Group</button>
+      <button type="submit">{props.buttonLabel}</button>
     </form>
   );
 };

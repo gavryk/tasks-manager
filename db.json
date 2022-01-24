@@ -1,55 +1,34 @@
 {
   "groups": [
     {
-      "id": "ikesms4uu0f",
-      "title": "Whatever",
-      "color": "#c25105",
+      "id": "jmsduiz9iaj",
+      "title": "React JS",
+      "color": "#00ccff",
       "active": false,
       "tasks": []
     },
     {
-      "id": "jmsduiz9iaj",
-      "title": "React JS",
-      "color": "#00ccff",
+      "id": "icov484xotm",
+      "title": "Test",
+      "color": "#000000",
       "active": false,
       "tasks": []
     }
   ],
   "tasks": [
     {
-      "id": "smf674c6c3j",
-      "groupId": "ikesms4uu0f",
-      "title": "Test 2",
-      "description": "",
-      "done": true
-    },
-    {
-      "id": "j9lwa875xf9",
-      "groupId": "ikesms4uu0f",
-      "title": "Task 3",
-      "description": "",
-      "done": false
-    },
-    {
-      "id": "sgl5cgb2hql",
-      "groupId": "ikesms4uu0f",
-      "title": "Task 4",
-      "description": "",
-      "done": true
-    },
-    {
-      "id": "oetp6367bsp",
-      "groupId": "ikesms4uu0f",
-      "title": "Task 5",
-      "description": "",
-      "done": false
-    },
-    {
       "id": "4xnvkxgxmxp",
       "groupId": "jmsduiz9iaj",
       "title": "Test React Task",
       "description": "<p>Hello <a href=\"https://github.com/gavryk\">GitHub</a></p>",
       "done": true
+    },
+    {
+      "id": "2vtav0zl8ir",
+      "groupId": "icov484xotm",
+      "title": "Finish This Project",
+      "description": "<p>Make highter this field :)</p>",
+      "done": false
     }
   ]
 }

@@ -39,17 +39,17 @@
       }
     }
     &.active {
-        filter: drop-shadow(-2px 3px 2px rgba(73, 73, 73, .4));
+      filter: drop-shadow(-2px 3px 2px rgba(73, 73, 73, 0.4));
       span {
         &:before {
-            transform: rotate(35deg);
-            transform-origin: left bottom;
-            width: 10px;
+          transform: rotate(35deg);
+          transform-origin: left bottom;
+          width: 10px;
         }
         &:after {
-            transform: rotate(-35deg);
-            transform-origin: left top;
-            width: 10px;
+          transform: rotate(-35deg);
+          transform-origin: left top;
+          width: 10px;
         }
       }
     }
@@ -57,6 +57,11 @@
 
   .tasksTitle {
     flex: 1;
+    position: relative;
+    > div {
+      max-width: 500px;
+      margin: 0 auto;
+    }
     h1 {
       font-size: 56px;
       text-align: center;
@@ -79,7 +84,7 @@
         display: inline-flex;
         opacity: 0;
         visibility: hidden;
-        transition: all .2s ease-in-out;
+        transition: all 0.2s ease-in-out;
         svg {
           color: #fff;
           font-size: 20px;

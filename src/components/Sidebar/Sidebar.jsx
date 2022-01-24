@@ -41,7 +41,9 @@ const Sidebar = ({ sidebarAct, items }) => {
       {items.length !== 0 && (
         <NavLink
           to="/"
-          className={(navData) => navData.isActive ? (`${style.active} ${style.allBtn}`) : style.allBtn}
+          className={(navData) =>
+            navData.isActive ? `${style.active} ${style.allBtn}` : style.allBtn
+          }
         >
           <h5>
             <FontAwesomeIcon size="xs" icon={faListUl} /> All Tasks
@@ -62,8 +64,9 @@ const Sidebar = ({ sidebarAct, items }) => {
       <AddButton toggle={toggleAddPopup} title="Add Group" />
       <AddGroupForm
         visible={visibleAddPopup}
-        addGroup={handleGroup}
+        handleFunction={handleGroup}
         toggleAddPopup={toggleAddPopup}
+        buttonLabel='Add Group'
       />
     </div>
   );
