@@ -30,16 +30,7 @@ const Header = ({ handleSidebar, sidebarAct, activeTasks }) => {
       >
         <span></span>
       </div>
-      <div
-        className={`
-          ${style.tasksTitle} 
-          ${
-            activeTasks.color === "#ffffff" || !activeTasks.color
-              ? style.white
-              : ""
-          }
-        `}
-      >
+      <div className={`${style.tasksTitle} ${activeTasks.color === "#ffffff" || !activeTasks.color ? style.white : ""}`}>
         {editMode ? (
           <AddGroupForm
             visible={editMode}

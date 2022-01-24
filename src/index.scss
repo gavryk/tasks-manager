@@ -46,3 +46,9 @@ body {
     height: 100%;
   }
 }
+
+.ck-editor__main {
+  > .ck {
+    min-height: 150px;
+  }
+}
