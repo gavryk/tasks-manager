@@ -2,7 +2,6 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import { AddGroupForm } from '..';
 import { editTaskGroup } from '../../redux/actions/tasksGroup';
 import style from "./Header.module.scss";
@@ -47,6 +46,7 @@ const Header = ({ handleSidebar, sidebarAct, activeTasks }) => {
             toggleAddPopup={editTitle}
             buttonLabel="Edit"
             handleFunction={handleEdit}
+            title={activeTasks.title}
           />
         ) : (
           <h1>

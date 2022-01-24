@@ -9,8 +9,8 @@
     },
     {
       "id": "icov484xotm",
-      "title": "Test",
-      "color": "#000000",
+      "title": "Oleg",
+      "color": "#61e907",
       "active": false,
       "tasks": []
     }
@@ -28,7 +28,7 @@
       "groupId": "icov484xotm",
       "title": "Finish This Project",
       "description": "<p>Make highter this field :)</p>",
-      "done": false
+      "done": true
     }
   ]
 }

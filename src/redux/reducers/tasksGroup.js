@@ -49,6 +49,18 @@ const tasksGroup = (state = initState, action) => {
         ...state,
         groups: newList,
       };
+    case "EDIT_GROUP":
+      const editGroup = state.groups.map((group) => {
+        if (group.id === action.id) {
+          group.title = action.title
+          group.color = action.color
+        }
+        return group;
+      });
+      return {
+        ...state,
+        groups: editGroup,
+      };
     case "COMPLETE_ACTIVE_TASKS":
       const doneTasks = state.groups.map((group) => {
         if (group.id === action.groupId) {

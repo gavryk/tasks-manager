@@ -28,6 +28,7 @@ export const deleteTaskGroup = (id) => {
 export const editTaskGroup = (id, title, color) => {
   return async (dispatch) => {
     axios.patch(`/groups/${id}`, {title: title, color: color});
+    dispatch(edit(id, title, color));
   };
 };
 
@@ -88,3 +89,12 @@ export const completeActiveTasks = (groupId, taskId) => {
     taskId,
   };
 };
+
+export const edit = (id, title, color) => {
+  return {
+    type: "EDIT_GROUP",
+    id,
+    title,
+    color
+  }
+}
