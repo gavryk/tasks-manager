@@ -1,14 +1,18 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { reduxForm } from "redux-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons"; 
 
 import style from './AddGroupForm.module.scss';
 
-const AddGroupForm = ({ handleFunction, visible, toggleAddPopup, buttonLabel }) => {
+const AddGroupForm = ({ handleFunction, visible, toggleAddPopup, buttonLabel, activeTitle = '' }) => {
   const [inputNameValue, setInputNameValue] = useState("");
   const [inputColorValue, setInputColorValue] = useState("#000000");
   const popupRef = useRef();
+
+  useEffect(() => {
+    setInputNameValue(activeTitle);
+  }, [activeTitle]);
 
   const setName = (e) => {
     setInputNameValue(e.currentTarget.value);

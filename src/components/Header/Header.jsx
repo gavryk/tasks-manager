@@ -46,7 +46,7 @@ const Header = ({ handleSidebar, sidebarAct, activeTasks }) => {
             toggleAddPopup={editTitle}
             buttonLabel="Edit"
             handleFunction={handleEdit}
-            title={activeTasks.title}
+            activeTitle={activeTasks.title}
           />
         ) : (
           <h1>
