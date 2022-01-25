@@ -1,16 +1,21 @@
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { reduxForm } from "redux-form";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 import style from "./AddTaskForm.module.scss";
 
-const AddTaskForm = ({ visible, toggleAddForm, addTask }) => {
+const AddTaskForm = ({ visible, toggleAddForm, handleFunction, activeTitle = '', activeDescription = '' }) => {
   const [inputTitleValue, setInputTitleValue] = useState("");
   const [inputDescriptionValue, setInputDescriptionValue] = useState("");
   const taskFromRef = useRef();
+
+  useEffect(() => {
+    setInputTitleValue(activeTitle);
+    setInputDescriptionValue(activeDescription);
+  }, [activeTitle, activeDescription]);
 
   const setTitle = (e) => {
     setInputTitleValue(e.currentTarget.value);
@@ -20,8 +25,8 @@ const AddTaskForm = ({ visible, toggleAddForm, addTask }) => {
   };
 
   const handleTask = () => {
-    if (inputTitleValue !== "" || inputDescriptionValue !== '') {
-      addTask(inputTitleValue, inputDescriptionValue);
+    if (inputTitleValue !== "" || inputDescriptionValue !== "") {
+      handleFunction(inputTitleValue, inputDescriptionValue);
     }
     setInputTitleValue("");
     setInputDescriptionValue("");

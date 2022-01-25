@@ -1,5 +1,5 @@
 import axios from "axios";
-import { completeActiveTasks, removeActiveTasks } from "./tasksGroup";
+import { completeActiveTasks, editTsk, removeActiveTasks } from "./tasksGroup";
 
 export const fetchTasks = () => {
   return async (dispatch) => {
@@ -34,6 +34,14 @@ export const doneTask = (groupId, taskId) => {
     await axios.patch(`/tasks/${taskId}`, { done: !doneTask });
   };
 };
+
+export const editTask = (id, title, description) => {
+  return async (dispatch) => {
+    //from tasksGroup Action
+    dispatch(editTsk(id, title, description));
+    axios.patch(`/tasks/${id}`, {title: title, description: description});
+  }
+}
 
 export const addTask = (task) => {
     return {

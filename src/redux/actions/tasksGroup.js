@@ -98,3 +98,12 @@ export const edit = (id, title, color) => {
     color
   }
 }
+
+export const editTsk = (id, title, description) => {
+  return {
+    type: "EDIT_TASK",
+    id,
+    title,
+    description
+  }
+}
