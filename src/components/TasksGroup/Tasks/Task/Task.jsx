@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import parse from "html-react-parser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faCheck, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 import style from "./Task.module.scss";
 
@@ -15,10 +15,16 @@ const Task = ({
   checkable,
   handleDoneTask,
 }) => {
+  const [editMode, setEditMode] = useState(false);
+
 
   const check = () => {
     handleDoneTask(id);
   }
+
+  const editTask = () => {
+    setEditMode(!editMode);
+  };
 
   return (
     <div className={`${style.taskCard} ${checkable ? style.checkableTask : ""} ${done ? style.done : ""}`}>
@@ -45,6 +51,11 @@ const Task = ({
       {removable && (
         <button className={style.remove} onClick={() => handleRemoveTask(id)}>
           <FontAwesomeIcon icon={faTimes} color="#50505063" />
+        </button>
+      )}
+      {checkable && (
+        <button onClick={editTask} className={style.editBtn}>
+            <FontAwesomeIcon icon={faEdit} color="#50505063" />
         </button>
       )}
     </div>
