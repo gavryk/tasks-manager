@@ -7,7 +7,14 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 import style from "./AddTaskForm.module.scss";
 
-const AddTaskForm = ({ visible, toggleAddForm, handleFunction, activeTitle = '', activeDescription = '' }) => {
+const AddTaskForm = ({
+  visible,
+  toggleAddForm,
+  handleFunction,
+  activeTitle = "",
+  activeDescription = "",
+  buttonLabel,
+}) => {
   const [inputTitleValue, setInputTitleValue] = useState("");
   const [inputDescriptionValue, setInputDescriptionValue] = useState("");
   const taskFromRef = useRef();
@@ -46,6 +53,7 @@ const AddTaskForm = ({ visible, toggleAddForm, handleFunction, activeTitle = '',
         inputDescriptionValue={inputDescriptionValue}
         setTitle={setTitle}
         setDescription={setDescription}
+        buttonLabel={buttonLabel}
         ClassicEditor={ClassicEditor}
       />
     </div>
@@ -91,22 +99,11 @@ const Form = (props) => {
           }}
         />
       </div>
-      {/* <div className="form-floating">
-        <textarea
-          className="form-control form-control-l"
-          type="text"
-          placeholder="Task Description"
-          value={props.inputDescriptionValue}
-          onChange={props.setDescription}
-          id="floatingTextarea"
-        />
-        <label htmlFor="floatingTextarea">Task Description</label>
-      </div> */}
       <button
         disabled={(props.inputTitleValue || props.inputDescriptionValue) === ""}
         type="submit"
       >
-        Add Task
+        {props.buttonLabel}
       </button>
     </form>
   );

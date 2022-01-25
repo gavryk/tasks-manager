@@ -69,6 +69,7 @@ const Tasks = React.memo(({ activeTasks }) => {
         visible={visibleTaskForm}
         handleFunction={handleAddTask}
         toggleAddForm={showAddForm}
+        buttonLabel='Add Task'
       />
     </div>
   );

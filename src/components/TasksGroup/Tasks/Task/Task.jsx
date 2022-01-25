@@ -75,6 +75,7 @@ const Task = ({
             toggleAddForm={handleEditMode}
             activeTitle={title}
             activeDescription={description}
+            buttonLabel='Edit'
           />
         </div>
       )}

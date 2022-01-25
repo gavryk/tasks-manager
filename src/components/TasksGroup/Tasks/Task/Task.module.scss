@@ -88,6 +88,18 @@
     right: 20px;
     opacity: 0;
     visibility: hidden;
+    svg {
+      path {
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    &:hover {
+      svg {
+        path {
+          fill: #505050d7;
+        }
+      }
+    }
   }
 
   .editBtn {
@@ -103,9 +115,19 @@
     visibility: hidden;
     transition: all 0.2s ease-in-out;
     padding: 13px 0;
+    &:hover {
+      svg {
+        path {
+          fill: #505050d7;
+        }
+      }
+    }
     svg {
       font-size: 15px;
       width: 100%;
+      path {
+        transition: all 0.2s ease-in-out;
+      }
     }
   }
 
