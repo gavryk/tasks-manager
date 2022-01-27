@@ -8,7 +8,7 @@ import {
   onAddTask,
   removeTask,
 } from "../../../redux/actions/tasks";
-import { setActiveTasks, updateTasks } from "../../../redux/actions/tasksGroup";
+import { setActiveTasks, updateDNDTasks, updateTasks } from "../../../redux/actions/tasksGroup";
 import AddTaskForm from "../../AddTaskForm/AddTaskForm";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
@@ -47,7 +47,7 @@ const Tasks = React.memo(({ activeTasks }) => {
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
 
-    dispatch(updateTasks(id, items));
+    dispatch(updateDNDTasks(id, items));
   };
 
   const handleEditTask = (id, title, description) => {
@@ -77,32 +77,38 @@ const Tasks = React.memo(({ activeTasks }) => {
                       index={index}
                     >
                       {(provided) => (
-                        <Task
-                          // key={task.id}
-                          {...task}
-                          handleRemoveTask={handleRemoveTask}
-                          handleDoneTask={handleDoneTask}
-                          removable={true}
-                          checkable={true}
-                          handleEditTask={handleEditTask}
-                          provided={provided}
-                        />
+                        <div
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                        >
+                          <Task
+                            // key={task.id}
+                            {...task}
+                            handleRemoveTask={handleRemoveTask}
+                            handleDoneTask={handleDoneTask}
+                            removable={true}
+                            checkable={true}
+                            handleEditTask={handleEditTask}
+                            provided={provided}
+                          />
+                        </div>
                       )}
                     </Draggable>
                   );
                 })}
-              <AddButton title="Add New Task" toggle={showAddForm} />
-              <AddTaskForm
-                visible={visibleTaskForm}
-                handleFunction={handleAddTask}
-                toggleAddForm={showAddForm}
-                buttonLabel="Add Task"
-              />
               {provided.placeholder}
             </div>
           )}
         </Droppable>
       </DragDropContext>
+      <AddButton title="Add New Task" toggle={showAddForm} />
+      <AddTaskForm
+        visible={visibleTaskForm}
+        handleFunction={handleAddTask}
+        toggleAddForm={showAddForm}
+        buttonLabel="Add Task"
+      />
     </div>
   );
 });

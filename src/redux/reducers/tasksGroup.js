@@ -32,10 +32,17 @@ const tasksGroup = (state = initState, action) => {
       };
     case "UPDATE_TASKS":
       let actTsk = state.groups.find((group) => group.id === action.id);
-      actTsk.tasks = action.payload;
+      actTsk.tasks = [...actTsk.tasks, action.payload];
       return {
         ...state,
         activeTasks: actTsk,
+      };
+    case "UPDATE_DND_TASKS":
+      let DNDTsks = state.groups.find((group) => group.id === action.id);
+      DNDTsks.tasks = action.payload;
+      return {
+        ...state,
+        activeTasks: DNDTsks,
       };
     case "REMOVE_ACTIVE_TASKS":
       const newList = state.groups.map((group) => {
@@ -51,8 +58,8 @@ const tasksGroup = (state = initState, action) => {
     case "EDIT_GROUP":
       const editGroup = state.groups.map((group) => {
         if (group.id === action.id) {
-          group.title = action.title
-          group.color = action.color
+          group.title = action.title;
+          group.color = action.color;
         }
         return group;
       });
@@ -64,24 +71,24 @@ const tasksGroup = (state = initState, action) => {
     case "EDIT_TASK":
       const editTask = state.activeTasks.tasks.map((task) => {
         if (task.id === action.id) {
-          task.title = action.title
-          task.description = action.description
+          task.title = action.title;
+          task.description = action.description;
         }
         return task;
-      })
+      });
 
       return {
         ...state,
         activeTasks: {
           ...state.activeTasks,
-          tasks: editTask
+          tasks: editTask,
         },
-      };  
+      };
     case "COMPLETE_ACTIVE_TASKS":
       const doneTasks = state.groups.map((group) => {
         if (group.id === action.groupId) {
           group.tasks = group.tasks.map((task) => {
-            if(task.id === action.taskId) {
+            if (task.id === action.taskId) {
               task.done = !task.done;
             }
             return task;

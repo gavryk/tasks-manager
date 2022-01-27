@@ -30,7 +30,14 @@ const tasks = (state = initState, action) => {
       return {
         ...state,
         items: doneItems,
-      };  
+      };
+    case "DND_TASKS":
+      const sortItems = state.items.filter((item) => item.groupId !== action.id);
+      console.log(sortItems); 
+      return {
+        ...state,
+        
+      };    
     default:
       return state;
   }
