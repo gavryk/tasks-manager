@@ -63,15 +63,11 @@ const Tasks = React.memo(({ activeTasks }) => {
   };
 
   return (
-    <div>
+    <div className={style.tasksWrapper}>
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="tasksWrapper">
           {(provided) => (
-            <div
-              className={style.tasksWrapper}
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-            >
+            <div {...provided.droppableProps} ref={provided.innerRef}>
               {activeTasks.tasks &&
                 activeTasks.tasks.map((task, index) => {
                   return (

@@ -5,6 +5,8 @@
   height: calc(100% - 170px);
   overflow-x: scroll;
   > div {
-    margin-bottom: 30px;
+    > div {
+      margin-bottom: 30px;
+    }
   }
 }
