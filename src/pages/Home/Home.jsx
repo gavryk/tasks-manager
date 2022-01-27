@@ -25,7 +25,7 @@ const Home = ({ tasks }) => {
                 <div>
                   <div className={style.tasksList}>
                     {group.tasks.map((t) => {
-                      return <Task key={t.id} {...t} />;
+                      return <Task key={t.id} {...t}/>;
                     })}
                   </div>
                 </div>

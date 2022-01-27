@@ -32,8 +32,7 @@ const tasksGroup = (state = initState, action) => {
       };
     case "UPDATE_TASKS":
       let actTsk = state.groups.find((group) => group.id === action.id);
-      actTsk.tasks = [...actTsk.tasks, action.payload];
-      
+      actTsk.tasks = action.payload;
       return {
         ...state,
         activeTasks: actTsk,

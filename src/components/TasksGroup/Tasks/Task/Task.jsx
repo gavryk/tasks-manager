@@ -15,9 +15,12 @@ const Task = ({
   done,
   checkable,
   handleDoneTask,
-  handleEditTask
+  handleEditTask,
+  provided
 }) => {
   const [editMode, setEditMode] = useState(false);
+  const draggableProps = provided && { ...provided.draggableProps };
+  const dragHandleProps = provided && { ...provided.dragHandleProps };
 
   const check = () => {
     handleDoneTask(id);
@@ -37,6 +40,9 @@ const Task = ({
       className={`${style.taskCard} ${checkable ? style.checkableTask : ""} ${
         done ? style.done : ""
       }`}
+      ref={provided && provided.innerRef}
+      {...draggableProps}
+      {...dragHandleProps}
     >
       {checkable ? (
         <div className={`${style.check}`} onClick={check}>
@@ -75,7 +81,7 @@ const Task = ({
             toggleAddForm={handleEditMode}
             activeTitle={title}
             activeDescription={description}
-            buttonLabel='Edit'
+            buttonLabel="Edit"
           />
         </div>
       )}
