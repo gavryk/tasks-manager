@@ -22,6 +22,7 @@ const App = () => {
     dispatch(fetchTasks());
 
   }, [dispatch]);
+  
 
   return (
     <div className="todo-wrapper">
