@@ -32,8 +32,8 @@ const tasks = (state = initState, action) => {
         items: doneItems,
       };
     case "DND_TASKS":
-      const sortItems = state.items.filter((item) => item.groupId !== action.id);
-      console.log(sortItems); 
+      const sortItems = state.items.filter((item) => item.groupId === action.id);
+      
       return {
         ...state,
         

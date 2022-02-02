@@ -76,6 +76,15 @@
           visibility: visible;
         }
       }
+      @media screen and (max-width: 1024px) {
+        font-size: 40px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 32px;
+      }
+      @media screen and (max-width: 576px) {
+        font-size: 28px;
+      }
       .editBtn {
         border: none;
         background-color: transparent;

@@ -14,6 +14,7 @@ export const postTaskGroup = (task) => {
   return async (dispatch) => {
     let { data } = await axios.post(`/groups`, task);
     dispatch(addTaskGroup(data));
+
   };
 };
 
@@ -38,7 +39,7 @@ export const updateTasks = (id, tasks) => {
   };
 };
 
-export const updateDNDTasks = (id, tasks) => {
+export const updateDNDTasks = (id, tasks, reorderedItem) => {
   return async (dispatch) => {
     dispatch(dndSortTasks(id, tasks));
     dispatch(updDNDTsk(id, tasks));

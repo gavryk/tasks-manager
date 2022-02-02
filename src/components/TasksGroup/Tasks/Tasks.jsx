@@ -46,8 +46,8 @@ const Tasks = React.memo(({ activeTasks }) => {
     const items = Array.from(activeTasks.tasks);
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
-
-    dispatch(updateDNDTasks(id, items));
+  
+    dispatch(updateDNDTasks(id, items, reorderedItem));
   };
 
   const handleEditTask = (id, title, description) => {
