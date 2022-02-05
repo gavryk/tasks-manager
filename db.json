@@ -10,13 +10,6 @@
   ],
   "tasks": [
     {
-      "id": "jddi2a06g1",
-      "groupId": "jmsduiz9iaj",
-      "title": "Create Task Manager",
-      "description": "",
-      "done": true
-    },
-    {
       "id": "vto4qkm5yoj",
       "groupId": "jmsduiz9iaj",
       "title": "Push To GitHub",
@@ -28,7 +21,7 @@
       "groupId": "jmsduiz9iaj",
       "title": "Deploy To Heroku/Netlify",
       "description": "<p><a href=\"https://app.netlify.com/teams/gavryk/overview\">Netlify</a> or <a href=\"https://dashboard.heroku.com/apps\">Heroku</a></p>",
-      "done": false
+      "done": true
     }
   ]
 }

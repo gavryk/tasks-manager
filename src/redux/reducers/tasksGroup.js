@@ -37,13 +37,6 @@ const tasksGroup = (state = initState, action) => {
         ...state,
         activeTasks: actTsk,
       };
-    case "UPDATE_DND_TASKS":
-      let DNDTsks = state.groups.find((group) => group.id === action.id);
-      DNDTsks.tasks = action.payload;
-      return {
-        ...state,
-        activeTasks: DNDTsks,
-      };
     case "REMOVE_ACTIVE_TASKS":
       const newList = state.groups.map((group) => {
         if (group.id === action.groupId) {

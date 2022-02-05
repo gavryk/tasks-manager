@@ -15,8 +15,7 @@ const Task = ({
   done,
   checkable,
   handleDoneTask,
-  handleEditTask,
-  provided
+  handleEditTask
 }) => {
   const [editMode, setEditMode] = useState(false);
 

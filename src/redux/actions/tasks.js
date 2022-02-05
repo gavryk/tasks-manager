@@ -70,11 +70,3 @@ export const done = (taskId) => {
     payload: taskId
   }
 }
-
-export const dndSortTasks = (id, tasks) => {
-  return {
-    type: "DND_TASKS",
-    id,
-    payload: tasks
-  }
-}

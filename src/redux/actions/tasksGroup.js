@@ -1,5 +1,4 @@
 import axios from "axios";
-import { dndSortTasks } from "./tasks";
 //"server": "npx json-server --watch db.json --port=3001"
 
 export const fetchTasksGroups = () => {
@@ -39,13 +38,6 @@ export const updateTasks = (id, tasks) => {
   };
 };
 
-export const updateDNDTasks = (id, tasks, reorderedItem) => {
-  return async (dispatch) => {
-    dispatch(dndSortTasks(id, tasks));
-    dispatch(updDNDTsk(id, tasks));
-  };
-};
-
 export const setTasksGroup = (items) => {
   return {
     type: "SET_GROUP",
@@ -77,14 +69,6 @@ export const setActiveTasks = (id) => {
 export const updTsk = (id, tasks) => {
   return {
     type: "UPDATE_TASKS",
-    id: id,
-    payload: tasks,
-  };
-};
-
-export const updDNDTsk = (id, tasks) => {
-  return {
-    type: "UPDATE_DND_TASKS",
     id: id,
     payload: tasks,
   };
