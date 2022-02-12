@@ -7,7 +7,6 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import { fetchTasks } from "./redux/actions/tasks";
 
-
 const App = () => {
   const dispatch = useDispatch();
   const [sidebarActive, setSidebarActive] = useState(true);
