@@ -6,6 +6,13 @@
       "color": "#00ccff",
       "active": false,
       "tasks": []
+    },
+    {
+      "id": "yfyg6tvbz5",
+      "title": "Test Group",
+      "color": "#6f18f2",
+      "active": false,
+      "tasks": []
     }
   ],
   "tasks": [
@@ -22,6 +29,13 @@
       "title": "Deploy To Heroku/Netlify",
       "description": "<p><a href=\"https://app.netlify.com/teams/gavryk/overview\">Netlify</a> or <a href=\"https://dashboard.heroku.com/apps\">Heroku</a></p>",
       "done": true
+    },
+    {
+      "id": "2a00034a-f5e1-43e1-b2b6-0b911f0a648f",
+      "groupId": "yfyg6tvbz5",
+      "title": "UUID Test",
+      "description": "<p>UUID</p>",
+      "done": false
     }
   ]
 }

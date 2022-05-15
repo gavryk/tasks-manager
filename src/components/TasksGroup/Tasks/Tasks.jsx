@@ -10,6 +10,7 @@ import {
 } from "../../../redux/actions/tasks";
 import { setActiveTasks, updateTasks } from "../../../redux/actions/tasksGroup";
 import AddTaskForm from "../../AddTaskForm/AddTaskForm";
+import { v4 as uuidv4 } from 'uuid';
 
 import style from "./Tasks.module.scss";
 
@@ -29,12 +30,13 @@ const Tasks = React.memo(({ activeTasks }) => {
 
   const handleAddTask = (title, description) => {
     const task = {
-      id: Math.random().toString(36).substr(2, 15),
+      id: uuidv4(),
       groupId: id,
       title: title,
       description: description,
       done: false,
     };
+    console.log(task);
     dispatch(onAddTask(task));
     dispatch(setActiveTasks(id));
     dispatch(updateTasks(id, task));
